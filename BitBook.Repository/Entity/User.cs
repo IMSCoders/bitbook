@@ -25,7 +25,7 @@ namespace BitBook.Repository.Entity
         [BsonElement]
         public bool IsDeleted { get; set; }
         [BsonElement]
-        public List<ObjectId> Friends { get; set; }
+        public List<string> Friends { get; set; }
 
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<User> manager, string authenticationType)
         {

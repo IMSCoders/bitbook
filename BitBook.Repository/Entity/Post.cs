@@ -13,7 +13,7 @@ namespace BitBook.Repository.Entity
         [BsonElement]
         public DateTime PostedTime { get; set; }
         [BsonElement]
-        public ObjectId PostedBy { get; set; }
+        public string PostedBy { get; set; }
         [BsonElement]
         public bool IsDeleted { get; set; }
     }

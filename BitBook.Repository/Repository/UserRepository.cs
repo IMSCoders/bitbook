@@ -40,7 +40,7 @@ namespace BitBook.Repository.Repository
             foreach (var friendId in commonFriendIds)
             {
                 var query = Query<User>.EQ(e => e.Id, friendId);
-                yield return Collection.FindOne(query).Name;
+                yield return Collection.FindOne(query).UserName;
             }
         }
 
