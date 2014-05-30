@@ -18,6 +18,9 @@
   </PropertyGroup>
   <ItemGroup>
     <Content Include="app.css" />
+    <Content Include="app\views\launchpad\launchpad.html" />
+    <Content Include="app\views\launchpad\login.html" />
+    <Content Include="app\views\launchpad\signup.html" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -303,6 +306,9 @@
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="app\app.ts" />
+    <TypeScriptCompile Include="app\controllers\LoginCtrl.ts" />
+    <TypeScriptCompile Include="app\controllers\SignupCtrl.ts" />
+    <TypeScriptCompile Include="app\references.ts" />
     <TypeScriptCompile Include="Scripts\typings\angularjs\angular-animate.d.ts" />
     <TypeScriptCompile Include="Scripts\typings\angularjs\angular-cookies.d.ts" />
     <TypeScriptCompile Include="Scripts\typings\angularjs\angular-mocks.d.ts" />
@@ -333,12 +339,10 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="app\controllers\" />
     <Folder Include="app\directives\" />
     <Folder Include="app\factories\" />
     <Folder Include="app\services\" />
     <Folder Include="app\views\home\" />
-    <Folder Include="app\views\launchpad\" />
     <Folder Include="app\views\user\" />
   </ItemGroup>
   <PropertyGroup>
