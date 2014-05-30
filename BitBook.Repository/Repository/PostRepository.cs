@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using BitBook.Repository.Entity;
 using BitBook.Repository.Interfaces;
 using MongoDB.Bson;

@@ -3,7 +3,7 @@ using MongoDB.Bson;
 
 namespace BitBook.Repository.Interfaces
 {
-    interface IRepository<TEntity> where TEntity : class
+    public interface IRepository<TEntity> where TEntity : class
     {
         void Add(TEntity entity);
         void Delete(ObjectId id);
