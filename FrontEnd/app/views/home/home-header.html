@@ -3,8 +3,20 @@
     <div class="navbar-header">
         <a class="navbar-brand" ui-sref="#">BitBook</a>
     </div>
-    <div class="header-search">
-        <input placeholder="Search for people" type="search" value="" ng-model="search.input" /> 
-        <i class="glyphicon glyphicon-search"></i>
+    
+    <div>
+        <ul class="nav navbar-nav">
+            <li>
+                <div class="header-search">
+                    <input placeholder="Search for people" type="search" value="" ng-model="search.input" />
+                    <i class="glyphicon glyphicon-search"></i>
+                </div>
+            </li>
+            <li><a class="btn btn-primary" ui-sref="profile">Profile</a></li>
+            <li><a class="btn btn-primary" ui-sref="home" >Home</a></li>
+            <li><button>Friends</button></li>
+            <li><button>Messages</button></li>
+            <li><button>Notifications</button></li>
+        </ul>
     </div>
 </nav>

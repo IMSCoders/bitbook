@@ -12,7 +12,14 @@
         this.posts = this.$scope.posts = this.postsService.getPosts();
     }
 
-    updateStatus() {
-        var description = this.$scope.status.description;
+    createPost() {
+        alert('in create');
+        var description = this.$scope.post.description;
+        var post :IPost = {
+            description: description,
+            postedBy:'Adib'
+        }
+        alert(' in create post');
+        this.postsService.createPost(post);
     }
 }

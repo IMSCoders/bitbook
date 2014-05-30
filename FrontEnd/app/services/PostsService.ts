@@ -23,6 +23,10 @@ class PostsService {
 
         return user;
     }
+
+    createPost(post:IPost) {
+        console.log(post);
+    }
 }
 
 App.app.service("PostsService", PostsService);

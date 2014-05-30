@@ -19,6 +19,10 @@
 
         return user;
     };
+
+    PostsService.prototype.createPost = function (post) {
+        console.log(post);
+    };
     PostsService.$inject = [];
     return PostsService;
 })();

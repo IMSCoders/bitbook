@@ -18,7 +18,34 @@
                         },
                         'feed@home': {
                             templateUrl: appViewPath + 'home/home-newsfeed.html',
-                            controller:NewsFeedCtrl
+                            controller: NewsFeedCtrl
+                        }
+                    }
+                })
+                .state('profile', {
+                    url: '/profile',
+                    views: {
+                        '': {
+                            templateUrl:appViewPath+'/profile/profile.html'
+                        },
+                        'info@profile': {
+                            templateUrl: appViewPath + '/profile/profile-info.html',
+                            controller: ProfileInfoCtrl,
+                            resolve: {
+                                user:() => {
+                                    var userService = new UsersService();
+                                    //return userService.getUser("1");
+                                    return {
+                                        username: 'username',
+                                        name: 'name',
+                                        email:'email'
+                                    }
+                                }
+                            }
+                        },
+                        'userposts@profile': {
+                            templateUrl: appViewPath + '/profile/profile-posts.html',
+                            controller:ProfilePostsCtrl
                         }
                     }
                 })

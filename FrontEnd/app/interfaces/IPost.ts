@@ -1,6 +1,6 @@
 ﻿interface IPost {
-    id: number;
+    id?: number;
     description: string;
-    postedTime: string;
+    postedTime?: string;
     postedBy:string;
 } 

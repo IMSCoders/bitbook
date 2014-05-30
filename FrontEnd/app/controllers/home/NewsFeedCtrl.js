@@ -9,8 +9,15 @@
         this.posts = this.$scope.posts = this.postsService.getPosts();
     };
 
-    NewsFeedCtrl.prototype.updateStatus = function () {
-        var description = this.$scope.status.description;
+    NewsFeedCtrl.prototype.createPost = function () {
+        alert('in create');
+        var description = this.$scope.post.description;
+        var post = {
+            description: description,
+            postedBy: 'Adib'
+        };
+        alert(' in create post');
+        this.postsService.createPost(post);
     };
     NewsFeedCtrl.$inject = ['$scope', 'PostsService'];
     return NewsFeedCtrl;

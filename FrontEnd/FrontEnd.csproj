@@ -24,6 +24,7 @@
     <Content Include="app\views\launchpad\launchpad.html" />
     <Content Include="app\views\launchpad\login.html" />
     <Content Include="app\views\launchpad\signup.html" />
+    <Content Include="app\views\profile\profile.html" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -359,6 +360,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="app\controllers\profile\" />
     <Folder Include="app\directives\" />
     <Folder Include="app\factories\" />
     <Folder Include="app\views\user\" />
