@@ -18,6 +18,8 @@
   </PropertyGroup>
   <ItemGroup>
     <Content Include="app.css" />
+    <Content Include="app\interfaces\IUser.js" />
+    <Content Include="app\interfaces\IUserLogin.js" />
     <Content Include="app\services\AuthService.js" />
     <Content Include="app\views\launchpad\launchpad.html" />
     <Content Include="app\views\launchpad\login.html" />
@@ -300,6 +302,8 @@
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="app\services\AuthService.js.map" />
+    <Content Include="app\interfaces\IUser.js.map" />
+    <Content Include="app\interfaces\IUserLogin.js.map" />
     <None Include="Scripts\jquery-1.9.0.intellisense.js" />
     <Content Include="Scripts\jquery-1.9.0.js" />
     <Content Include="Scripts\jquery-1.9.0.min.js" />
@@ -310,6 +314,8 @@
     <TypeScriptCompile Include="app\app.ts" />
     <TypeScriptCompile Include="app\controllers\LoginCtrl.ts" />
     <TypeScriptCompile Include="app\controllers\SignupCtrl.ts" />
+    <TypeScriptCompile Include="app\interfaces\IUser.ts" />
+    <TypeScriptCompile Include="app\interfaces\IUserLogin.ts" />
     <TypeScriptCompile Include="app\references.ts" />
     <TypeScriptCompile Include="app\services\AuthService.ts" />
     <TypeScriptCompile Include="Scripts\typings\angularjs\angular-animate.d.ts" />
