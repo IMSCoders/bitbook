@@ -9,18 +9,28 @@
     <link href="Content/style/header.css" rel="stylesheet" />
     <script src="Scripts/angular.js"></script>
     <script src="Scripts/angular-ui-router.js"></script>
+    <script src="Scripts/angular-ui/ui-bootstrap.js"></script>
+    <script src="Scripts/jquery-1.9.0.js"></script>
+    <script src="Scripts/jquery.signalR-2.0.3.js"></script>
     <script src="app/app.js"></script>
     <script src="app/controllers/LoginCtrl.js"></script>
     <script src="app/controllers/SignupCtrl.js"></script>
-    <script src="app/services/AuthService.js"></script>
-    <script src="app/services/SearchService.js"></script>
-    <script src="app/services/PostsService.js"></script>
     <script src="app/controllers/home/HomeHeaderCtrl.js"></script>
     <script src="app/controllers/home/NewsFeedCtrl.js"></script>
+    <script src="app/controllers/home/HomeTickerCtrl.js"></script>
     <script src="app/controllers/profile/ProfilePostsCtrl.js"></script>
     <script src="app/controllers/profile/ProfileInfoCtrl.js"></script>
+    <script src="app/controllers/profile/ProfileFriendsCtrl.js"></script>
+    <script src="app/controllers/profile/FriendsDirectiveCtrl.js"></script>
     <script src="app/directives/showAllPostsDirective.js"></script>
+    <script src="app/factories/SignalRFactory.js"></script>
+    <script src="app/directives/allFriendsDirective.js"></script>
+    <script src="app/services/AuthService.js"></script>
     <script src="app/services/UsersService.js"></script>
+    <script src="app/services/CommentService.js"></script>
+    <script src="app/services/FriendsService.js"></script>
+    <script src="app/services/SearchService.js"></script>
+    <script src="app/services/PostsService.js"></script>
 </head>
 <body ng-app="app">
     <!-- NAVIGATION -->
@@ -30,3 +40,55 @@
     </div>
 </body>
 </html>
+
+<!--<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>SignalR Simple Chat</title>
+    <style type="text/css">
+        .container {
+            background-color: #99ccff;
+            border: thick solid #808080;
+            padding: 80px;
+            margin: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <input type="text" id="message" />
+        <input type="button" id="sendmessage" value="Send" />
+        <input type="hidden" id="displayname" />
+        <ul id="discussion"></ul>
+    </div>
+    
+    <script src="Scripts/jquery-1.9.0.min.js"></script>
+    
+    <script src="Scripts/jquery.signalR-2.0.3.min.js"></script>
+    <script src="http://localhost:5316/signalr/hubs"></script>
+    <script type="text/javascript">
+        $(function () {
+            var chat = $.connection.BitBookHub;
+            chat.client.broadcastMessage = function (name, message) {
+                var encodedName = $('<div />').text(name).html();
+                var encodedMsg = $('<div />').text(message).html();
+                $('#discussion').append('<li><strong>' + encodedName + '</strong>: &nbsp;&nbsp;' + encodedMsg + '</li>');
+
+            };
+            chat.client.broadCastTime = function (time) {
+                var encodedTime = $('<div />').text(time).html();
+                $('#discussion').append('<li><strong>' + encodedTime + '</strong>: &nbsp;&nbsp;' + '</li>');
+
+            };
+            $('#displayname').val(prompt('Enter your name: ', ''));
+            $('#message').focus();
+            $.connection.hub.start({jsonp:true}).done(function () {
+                $('#sendmessage').click(function () {
+                    chat.server.send($('#displayname').val(), $('#message').val());
+                    $('#message').val('').focus();
+                });
+            });
+        });
+    </script>
+</body>
+</html>-->

@@ -3,6 +3,7 @@
         <form name="createPostForm" ng-submit="model.createPost(createPostForm.$valid)">
          
         <textarea placeholder="What's on your mind" ng-model="post.description" required></textarea>
+            <p ng-show="createPostForm.post.description.$invalid && ! createPostForm.post.description.$pristine" class="help-block">This field is required</p>
             <button class="btn btn-primary" type="submit" ng-disabled="createPostForm.$invalid" >Post</button>
         </form>
     </div>

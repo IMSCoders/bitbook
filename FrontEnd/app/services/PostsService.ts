@@ -26,6 +26,7 @@ class PostsService {
 
     createPost(post:IPost) {
         console.log(post);
+
     }
 }
 

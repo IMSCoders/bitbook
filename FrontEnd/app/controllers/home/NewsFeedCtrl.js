@@ -1,25 +1,39 @@
 ﻿var NewsFeedCtrl = (function () {
-    function NewsFeedCtrl($scope, postsService) {
+    function NewsFeedCtrl($scope, postsService, signalRFactory, commentService) {
         this.$scope = $scope;
         this.postsService = postsService;
+        this.signalRFactory = signalRFactory;
+        this.commentService = commentService;
         $scope.model = this;
         this.getPosts();
+        this.signalRFactory.initialize(this.broadcastMessage);
     }
     NewsFeedCtrl.prototype.getPosts = function () {
         this.posts = this.$scope.posts = this.postsService.getPosts();
     };
 
     NewsFeedCtrl.prototype.createPost = function () {
-        alert('in create');
         var description = this.$scope.post.description;
         var post = {
             description: description,
             postedBy: 'Adib'
         };
-        alert(' in create post');
         this.postsService.createPost(post);
+        this.signalRFactory.sendRequest();
     };
-    NewsFeedCtrl.$inject = ['$scope', 'PostsService'];
+
+    NewsFeedCtrl.prototype.likeEvent = function () {
+    };
+
+    NewsFeedCtrl.prototype.broadcastMessage = function () {
+        alert('in broad cast message');
+    };
+
+    NewsFeedCtrl.prototype.addComment = function () {
+        alert('add comment');
+        this.commentService.createComment();
+    };
+    NewsFeedCtrl.$inject = ['$scope', 'PostsService', 'SignalRFactory'];
     return NewsFeedCtrl;
 })();
 //# sourceMappingURL=NewsFeedCtrl.js.map

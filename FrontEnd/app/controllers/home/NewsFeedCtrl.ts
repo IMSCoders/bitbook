@@ -1,11 +1,12 @@
 ﻿class NewsFeedCtrl {
 
     posts:IPost[];
-    static $inject: string[] = ['$scope', 'PostsService'];
+    static $inject: string[] = ['$scope', 'PostsService', 'SignalRFactory'];
 
-    constructor(private $scope, private postsService: PostsService) {
+    constructor(private $scope, private postsService: PostsService, private signalRFactory:SignalRFactory, private commentService:CommentService) {
         $scope.model = this;
         this.getPosts();
+        this.signalRFactory.initialize(this.broadcastMessage);
     }
 
     getPosts() {
@@ -13,13 +14,25 @@
     }
 
     createPost() {
-        alert('in create');
         var description = this.$scope.post.description;
         var post :IPost = {
             description: description,
             postedBy:'Adib'
         }
-        alert(' in create post');
         this.postsService.createPost(post);
+        this.signalRFactory.sendRequest();
+    }
+
+    likeEvent() {
+            
+    }
+
+    broadcastMessage() {
+        alert('in broad cast message');
+    }
+   
+    addComment() {
+        alert('add comment');
+        this.commentService.createComment();
     }
 }

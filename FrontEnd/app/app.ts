@@ -1,6 +1,8 @@
 ﻿module App {
-    export var app = angular.module('app', ['ui.router']);
+    export var app = angular.module('app', ['ui.router', 'ui.bootstrap']);
+    export var webApiURLForAccountRegister = 'http://localhost:14170/api/Account/Register';
     var appViewPath = 'app/views/';
+    app.value('$', $);
     app.config([
         '$stateProvider', '$urlRouterProvider', ($stateProvider, $urlRouterProvider) => {
 
@@ -19,6 +21,10 @@
                         'feed@home': {
                             templateUrl: appViewPath + 'home/home-newsfeed.html',
                             controller: NewsFeedCtrl
+                        },
+                        'ticker@home': {
+                            //templateUrl: appViewPath + 'home/home-ticker.html',
+                            controller:HomeTickerCtrl
                         }
                     }
                 })
@@ -44,8 +50,12 @@
                             }
                         },
                         'userposts@profile': {
-                            templateUrl: appViewPath + '/profile/profile-posts.html',
+                            templateUrl: appViewPath + 'profile/profile-posts.html',
                             controller:ProfilePostsCtrl
+                        },
+                        'friends@profile': {
+                            templateUrl: appViewPath + 'profile/profile-friends.html',
+                            controller:ProfileFriendsCtrl
                         }
                     }
                 })
