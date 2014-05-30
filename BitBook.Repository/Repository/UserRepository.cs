@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using BitBook.Repository.Entity;
 using BitBook.Repository.Interfaces;
 using MongoDB.Bson;
@@ -19,13 +17,13 @@ namespace BitBook.Repository.Repository
 
         public User GetByName(string nameOrPartOfName)
         {
-            var query = Query<User>.Matches(e => e.Name, new BsonRegularExpression(nameOrPartOfName));
+            var query = Query<User>.Matches(e => e.UserName, new BsonRegularExpression(nameOrPartOfName));
             return Collection.Find(query).First();
         }
 
         public List<User> GetUsersByName(string nameOrPartOfName)
         {
-            var query = Query<User>.Matches(e => e.Name, new BsonRegularExpression(nameOrPartOfName));
+            var query = Query<User>.Matches(e => e.UserName, new BsonRegularExpression(nameOrPartOfName));
             return Collection.Find(query).ToList();
         }
 
@@ -53,7 +51,7 @@ namespace BitBook.Repository.Repository
 
         public override User GetById(ObjectId id)
         {
-            var query = Query<User>.EQ(e => e.Id, id);
+            var query = Query<User>.EQ(e => e.Id, id.ToString());
             return Collection.Find(query).First();
         }
 

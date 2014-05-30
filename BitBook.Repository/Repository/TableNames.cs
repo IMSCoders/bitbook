@@ -4,9 +4,11 @@
     {
         public static string User
         {
-            get { return "Users"; }
+            get { return "AspNetUsers"; }
         }
 
-        public static string Post { get; set; }
+        public static string Post {
+            get { return "Posts"; }
+        }
     }
 }
