@@ -5,7 +5,7 @@
         $scope.model = this;
     }
     LoginCtrl.prototype.login = function () {
-        this.authService.login();
+        //this.authService.login();
     };
     LoginCtrl.$inject = ['$scope', 'AuthService'];
     return LoginCtrl;

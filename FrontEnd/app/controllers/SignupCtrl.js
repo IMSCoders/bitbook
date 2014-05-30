@@ -5,7 +5,7 @@
         $scope.model = this;
     }
     SignupCtrl.prototype.signup = function () {
-        this.authService.signup();
+        //this.authService.signup();
     };
     SignupCtrl.$inject = ['$scope', 'AuthService'];
     return SignupCtrl;

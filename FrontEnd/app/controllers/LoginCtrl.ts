@@ -9,7 +9,7 @@ class LoginCtrl {
 
     login() {
         
-        this.authService.login();
+        //this.authService.login();
     }
 
    

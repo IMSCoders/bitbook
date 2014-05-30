@@ -7,7 +7,18 @@
             $urlRouterProvider.otherwise('/home');
             $stateProvider.state('home', {
                 url: '/home',
-                template: "thi sis aassdf"
+                views: {
+                    '': {
+                        templateUrl: appViewPath + 'home/home.html'
+                    },
+                    'header@home': {
+                        templateUrl: appViewPath + 'home/home-header.html'
+                    },
+                    'feed@home': {
+                        templateUrl: appViewPath + 'home/home-newsfeed.html',
+                        controller: NewsFeedCtrl
+                    }
+                }
             }).state('launchpad', {
                 url: '/',
                 views: {

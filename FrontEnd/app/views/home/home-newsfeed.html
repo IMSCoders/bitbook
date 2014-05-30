@@ -1,0 +1,12 @@
+﻿<div>
+    <div>
+        <textarea placeholder="What's on your mind" ng-model="status.description" ></textarea>
+        <button ng-click="model.updateStatus()" >Post</button>
+    </div>
+
+    <div>
+        <ul>
+            <li ng-repeat="post in model.posts">{{post.description}} posted by {{post.postedBy}}</li>
+        </ul>
+    </div>
+</div>
