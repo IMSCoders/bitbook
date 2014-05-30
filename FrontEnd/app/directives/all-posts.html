@@ -2,7 +2,12 @@
     <ul>
         <li ng-repeat="post in data">
             {{post.description}} posted by {{post.postedBy}}
-            <button ng-click="model.likeEvent()" >Like</button>
+            <div>
+                <button ng-click="model.likeEvent()" >Like</button>
+                <br />
+                <textarea ng-model="comment.description"  placeholder="Comment.."></textarea>
+                <button ng-click="model.addComment()" >Comment</button>
+            </div>
         </li>
     </ul>
 </div>

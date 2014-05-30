@@ -50,8 +50,12 @@
                             }
                         },
                         'userposts@profile': {
-                            templateUrl: appViewPath + '/profile/profile-posts.html',
+                            templateUrl: appViewPath + 'profile/profile-posts.html',
                             controller:ProfilePostsCtrl
+                        },
+                        'friends@profile': {
+                            templateUrl: appViewPath + 'profile/profile-friends.html',
+                            controller:ProfileFriendsCtrl
                         }
                     }
                 })

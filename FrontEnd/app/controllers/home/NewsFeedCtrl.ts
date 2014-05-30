@@ -3,7 +3,7 @@
     posts:IPost[];
     static $inject: string[] = ['$scope', 'PostsService', 'SignalRFactory'];
 
-    constructor(private $scope, private postsService: PostsService, private signalRFactory:SignalRFactory) {
+    constructor(private $scope, private postsService: PostsService, private signalRFactory:SignalRFactory, private commentService:CommentService) {
         $scope.model = this;
         this.getPosts();
         this.signalRFactory.initialize(this.broadcastMessage);
@@ -19,7 +19,7 @@
             description: description,
             postedBy:'Adib'
         }
-        //this.postsService.createPost(post);
+        this.postsService.createPost(post);
         this.signalRFactory.sendRequest();
     }
 
@@ -31,4 +31,8 @@
         alert('in broad cast message');
     }
    
+    addComment() {
+        alert('add comment');
+        this.commentService.createComment();
+    }
 }
