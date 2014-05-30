@@ -3,16 +3,30 @@
 <html lang="en">
 <head>
     <meta charset="utf-8" />
-    <title>TypeScript HTML App</title>
+    <title>BitBook</title>
     <link rel="stylesheet" href="app.css" type="text/css" />
     <link href="Content/bootstrap.css" rel="stylesheet" />
+    <link href="Content/style/header.css" rel="stylesheet" />
     <script src="Scripts/angular.js"></script>
     <script src="Scripts/angular-ui-router.js"></script>
     <script src="app/app.js"></script>
+    <script src="app/controllers/LoginCtrl.js"></script>
+    <script src="app/controllers/SignupCtrl.js"></script>
+    <script src="app/services/AuthService.js"></script>
+    <script src="app/services/SearchService.js"></script>
+    <script src="app/services/PostsService.js"></script>
+    <script src="app/controllers/home/HomeHeaderCtrl.js"></script>
+    <script src="app/controllers/home/NewsFeedCtrl.js"></script>
+    <script src="app/controllers/profile/ProfilePostsCtrl.js"></script>
+    <script src="app/controllers/profile/ProfileInfoCtrl.js"></script>
+    <script src="app/directives/showAllPostsDirective.js"></script>
+    <script src="app/services/UsersService.js"></script>
 </head>
-<body>
-    <h1>TypeScript HTML App</h1>
+<body ng-app="app">
+    <!-- NAVIGATION -->
 
-    <div id="content"></div>
+    <div id="container">
+        <div ui-view></div>
+    </div>
 </body>
 </html>

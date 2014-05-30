@@ -1,0 +1,12 @@
+<div class="row">
+    <div class="col-sm-6">
+        <form name="loginForm" ng-submit="model.login(loginForm.$valid)">
+            <label for="username">Username:</label>
+            <input type="text" id="username" ng-model="user.username" required ng-minLength="3"/>
+            <p ng-show="loginForm.username.$invalid && ! loginForm.username.$pristine" class="help-block">You name is required.</p>
+            <label for="password">Password:</label>
+            <input type="password" id="password" ng-model="user.password" />
+            <button class="btn btn-primary" type="submit" ng-disabled="loginForm.$invalid" >Login</button>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,1 @@
+{"version":3,"file":"SearchService.js","sourceRoot":"","sources":["SearchService.ts"],"names":["SearchService","SearchService.constructor","SearchService.searchPeople"],"mappings":"AAAA;IAEIA;IAEAC,CAACA;IAEDD,uCAAAA,UAAaA,IAAWA;IAExBE,CAACA;IAPDF,wBAAiBA,EAAEA;IAQvBA,qBAACA;AAADA,CAACA,IAAA;;AAED,GAAG,CAAC,GAAG,CAAC,OAAO,CAAC,eAAe,EAAE,aAAa,CAAC"}
