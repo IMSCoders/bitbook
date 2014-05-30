@@ -10,9 +10,10 @@
         var email = this.$scope.newuser.email;
 
         var newuser = {
-            name: username,
-            password: password,
-            email: email
+            UserName: username,
+            Email: email,
+            Password: password,
+            ConfirmPassword: password
         };
         this.authService.signup(newuser);
     };

@@ -1,6 +1,6 @@
 ﻿class AuthService {
-    static $inject: string[] = [];
-    constructor() {
+    static $inject: string[] = ['$http'];
+    constructor(private $http) {
         
     }
 
@@ -9,7 +9,7 @@
     }
 
     signup(user: IUser) {
-        
+        this.$http.post(App.webApiURL, user).success();
     }
 } 
 
