@@ -1,4 +1,5 @@
 ﻿interface IUser {
-    name:string;
-    password:string;
+    name: string;
+    password: string;
+    email: string;
 } 

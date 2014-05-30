@@ -4,7 +4,7 @@
         
     }
 
-    login(user:IUser) {
+    login(user:IUserLogin) {
         
     }
 
