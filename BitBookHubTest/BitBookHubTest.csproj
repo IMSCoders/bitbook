@@ -40,6 +40,17 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Properties\" />
+    <Compile Include="Class1.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BitBookHub\BitBookHub.csproj">
+      <Project>{dc5144ab-0c7b-4c44-a066-0318b49b47a4}</Project>
+      <Name>BitBookHub</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
