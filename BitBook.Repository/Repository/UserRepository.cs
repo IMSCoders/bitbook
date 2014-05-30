@@ -10,7 +10,7 @@ using MongoDB.Driver.Builders;
 
 namespace BitBook.Repository.Repository
 {
-    internal class UserRepository : GenericRepository<User>, IUserRepository
+    public class UserRepository : GenericRepository<User>, IUserRepository
     {
         public UserRepository(DataContext context)
             : base(context, TableNames.User)

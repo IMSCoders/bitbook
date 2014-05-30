@@ -32,6 +32,11 @@ namespace BitBook.Repository.Repository
             return Collection.FindAll();
         }
 
+        public void Update(T entity)
+        {
+            Collection.Save(entity);
+        }
+
         public void Save()
         {
             throw new NotImplementedException();
@@ -41,6 +46,5 @@ namespace BitBook.Repository.Repository
 
         public abstract T GetById(ObjectId id);
 
-        public abstract T Update(T entity);
     }
 }

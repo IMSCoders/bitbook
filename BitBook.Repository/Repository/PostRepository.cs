@@ -26,10 +26,5 @@ namespace BitBook.Repository.Repository
             var query = Query<Post>.EQ(e => e.Id, id);
             return Collection.Find(query).First();
         }
-
-        public override Post Update(Post entity)
-        {
-            throw new NotImplementedException();
-        }
     }
 }
