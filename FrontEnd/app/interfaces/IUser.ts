@@ -1,5 +1,7 @@
 ﻿interface IUser {
-    name: string;
-    password: string;
-    email: string;
+    ID?: string;
+    UserName: string;
+    Password: string;
+    Email: string;
+    ConfirmPassword: string;
 } 

@@ -1,12 +1,14 @@
 ﻿var AuthService = (function () {
-    function AuthService() {
+    function AuthService($http) {
+        this.$http = $http;
     }
     AuthService.prototype.login = function (user) {
     };
 
     AuthService.prototype.signup = function (user) {
+        this.$http.post(App.webApiURL, user).success();
     };
-    AuthService.$inject = [];
+    AuthService.$inject = ['$http'];
     return AuthService;
 })();
 

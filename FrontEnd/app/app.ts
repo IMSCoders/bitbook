@@ -1,5 +1,6 @@
 ﻿module App {
-    export var app = angular.module('app', ['ui.router','ui.bootstrap']);
+    export var app = angular.module('app', ['ui.router', 'ui.bootstrap']);
+    export var webApiURL = 'http://localhost:14170';
     var appViewPath = 'app/views/';
     app.value('$', $);
     app.config([

@@ -18,11 +18,14 @@ using BitBook.WebApi.Models;
 using BitBook.WebApi.Providers;
 using BitBook.WebApi.Results;
 using MongoDB.AspNet.Identity;
+using System.Web.Http.Cors;
+using System.Configuration;
 
 namespace BitBook.WebApi.Controllers
 {
     [Authorize]
     [RoutePrefix("api/Account")]
+    [EnableCors(origins: "http://localhost:14170", headers: "*", methods: "*")]
     public class AccountController : ApiController
     {
         private const string LocalLoginProvider = "Local";
