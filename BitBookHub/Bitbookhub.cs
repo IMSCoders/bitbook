@@ -23,9 +23,9 @@ namespace BitBookHub
         }
 
         [HubMethodName("singleGroupNotice")]
-        public void SingleGroupNotice(string groupName, string notificationMessage, string notificationTypeId)
+        public void SingleGroupNotice(string userName, string notificationMessage, string notificationTypeId)
         {
-            Clients.Group(groupName).receiveNotification(notificationMessage, notificationTypeId);
+            Clients.Group(userName).receiveNotification(notificationMessage, notificationTypeId);
         }
         public void Send(string name, string message)
         {
