@@ -5,7 +5,7 @@
     }
 
     signup() {
-        this.authService.signup();
+        
     }
 
 } 

@@ -4,13 +4,13 @@
         
     }
 
-    login(user:IUser) {
+    //login(user:IUser) {
         
-    }
+    //}
 
-    signup(user: IUser) {
+    //signup(user: IUser) {
         
-    }
+    //}
 } 
 
 App.app.service("AuthService", AuthService)
