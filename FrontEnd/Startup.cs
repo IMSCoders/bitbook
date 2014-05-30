@@ -15,7 +15,7 @@ namespace FrontEnd
         public void Configuration(IAppBuilder app)
         {
             HubConfiguration config = new HubConfiguration();
-            GlobalHost.DependencyResolver.UseSqlServer(ConfigurationManager.AppSettings["signalRScaleOut"]);
+           // GlobalHost.DependencyResolver.UseSqlServer(ConfigurationManager.AppSettings["signalRScaleOut"]);
             config.EnableJavaScriptProxies = true;
             config.EnableDetailedErrors = true;
             config.EnableJSONP = true;

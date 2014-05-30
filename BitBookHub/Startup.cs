@@ -14,8 +14,11 @@ namespace BitBookHub
         public void Configuration(IAppBuilder app)
         {
             HubConfiguration config = new HubConfiguration();
-
-            GlobalHost.DependencyResolver.UseSqlServer(ConfigurationManager.AppSettings["signalRScaleOut"]);
+            var connectionString = ConfigurationManager.AppSettings["signalRScaleOut"];
+            var sqlConfig= new SqlScaleoutConfiguration(connectionString) { 
+            TableCount=5
+            };
+            //GlobalHost.DependencyResolver.UseSqlServer(sqlConfig);
             config.EnableJavaScriptProxies = true;
             config.EnableDetailedErrors = true;
             config.EnableJSONP = true;
