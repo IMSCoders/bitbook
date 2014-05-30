@@ -5,6 +5,16 @@
         $scope.model = this;
     }
     SignupCtrl.prototype.signup = function () {
+        var username = this.$scope.newuser.username;
+        var password = this.$scope.newuser.password;
+        var email = this.$scope.newuser.email;
+
+        var newuser = {
+            name: username,
+            password: password,
+            email: email
+        };
+        this.authService.signup(newuser);
     };
     SignupCtrl.$inject = ['$scope', 'AuthService'];
     return SignupCtrl;
