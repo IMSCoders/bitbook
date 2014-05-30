@@ -16,5 +16,6 @@ namespace BitBook.Repository.Entity
         public ObjectId PostedBy { get; set; }
         [BsonElement]
         public bool IsDeleted { get; set; }
+
     }
 }
