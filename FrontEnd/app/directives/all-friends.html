@@ -1,0 +1,18 @@
+﻿<div>
+    
+    <ul>
+        <li ng-repeat="friend in data">
+            {{friend}}
+
+            <div class="btn-group" dropdown is-open="status.isopen">
+                <button type="button" class="btn btn-primary dropdown-toggle" ng-disabled="disabled">
+                    Options <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu" role="menu">
+                    <li><a ng-click="model.unfriend()">Unfriend</a></li>
+                    <li><a ng-click='model.hideFromFeed()'>Hide From Feed</a></li>
+                </ul>
+            </div>
+        </li>
+    </ul>
+</div>

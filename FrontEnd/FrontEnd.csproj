@@ -18,14 +18,15 @@
   </PropertyGroup>
   <ItemGroup>
     <Content Include="app.css" />
+    <Content Include="app\directives\all-friends.html" />
     <Content Include="app\directives\all-posts.html" />
-    <Content Include="app\directives\showAllPostsDirective.js" />
     <Content Include="app\views\home\home-newsfeed.html" />
     <Content Include="app\views\home\home-header.html" />
     <Content Include="app\views\home\home.html" />
     <Content Include="app\views\launchpad\launchpad.html" />
     <Content Include="app\views\launchpad\login.html" />
     <Content Include="app\views\launchpad\signup.html" />
+    <Content Include="app\views\profile\profile-friends.html" />
     <Content Include="app\views\profile\profile-info.html" />
     <Content Include="app\views\profile\profile-posts.html" />
     <Content Include="app\views\profile\profile.html" />
@@ -334,9 +335,12 @@
     <TypeScriptCompile Include="app\controllers\home\NewsFeedCtrl.ts" />
     <TypeScriptCompile Include="app\controllers\home\HomeHeaderCtrl.ts" />
     <TypeScriptCompile Include="app\controllers\LoginCtrl.ts" />
+    <TypeScriptCompile Include="app\controllers\profile\FriendsDirectiveCtrl.ts" />
+    <TypeScriptCompile Include="app\controllers\profile\ProfileFriendsCtrl.ts" />
     <TypeScriptCompile Include="app\controllers\profile\ProfileInfoCtrl.ts" />
     <TypeScriptCompile Include="app\controllers\profile\ProfilePostsCtrl.ts" />
     <TypeScriptCompile Include="app\controllers\SignupCtrl.ts" />
+    <TypeScriptCompile Include="app\directives\allFriendsDirective.ts" />
     <TypeScriptCompile Include="app\directives\showAllPostsDirective.ts" />
     <TypeScriptCompile Include="app\factories\SignalRFactory.ts" />
     <TypeScriptCompile Include="app\interfaces\IPost.ts" />
@@ -344,6 +348,8 @@
     <TypeScriptCompile Include="app\interfaces\IUserLogin.ts" />
     <TypeScriptCompile Include="app\references.ts" />
     <TypeScriptCompile Include="app\services\AuthService.ts" />
+    <TypeScriptCompile Include="app\services\CommentService.ts" />
+    <TypeScriptCompile Include="app\services\FriendsService.ts" />
     <TypeScriptCompile Include="app\services\PostsService.ts" />
     <TypeScriptCompile Include="app\services\SearchService.ts" />
     <TypeScriptCompile Include="app\services\UsersService.ts" />

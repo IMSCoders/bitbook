@@ -1,8 +1,9 @@
 ﻿var NewsFeedCtrl = (function () {
-    function NewsFeedCtrl($scope, postsService, signalRFactory) {
+    function NewsFeedCtrl($scope, postsService, signalRFactory, commentService) {
         this.$scope = $scope;
         this.postsService = postsService;
         this.signalRFactory = signalRFactory;
+        this.commentService = commentService;
         $scope.model = this;
         this.getPosts();
         this.signalRFactory.initialize(this.broadcastMessage);
@@ -17,8 +18,7 @@
             description: description,
             postedBy: 'Adib'
         };
-
-        //this.postsService.createPost(post);
+        this.postsService.createPost(post);
         this.signalRFactory.sendRequest();
     };
 
@@ -27,6 +27,11 @@
 
     NewsFeedCtrl.prototype.broadcastMessage = function () {
         alert('in broad cast message');
+    };
+
+    NewsFeedCtrl.prototype.addComment = function () {
+        alert('add comment');
+        this.commentService.createComment();
     };
     NewsFeedCtrl.$inject = ['$scope', 'PostsService', 'SignalRFactory'];
     return NewsFeedCtrl;
