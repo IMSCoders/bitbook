@@ -10,19 +10,22 @@ namespace BitBookHub
     [HubName("BitBookHub")]
     public class Bitbookhub : Hub
     {
-        [HubMethodName("")]
-        public void Send(string name, string message)
+        [HubMethodName("sendToAll")]
+        public void SendToAll(string name, string message)
         {
             Clients.All.broadcastMessage(name, message);
-
         }
 
-        [HubMethodName("IncludeTime")]
-        public void IncludeTime(string time)
+        [HubMethodName("joinGroupByOwnName")]
+        public void JoinGroupByOwnName(string userName)
         {
-            //Clients.All.broadcastTime(time);
-            Clients.All.broadCastTime(time);
+            Groups.Add(Context.ConnectionId, userName);
+        }
 
+        [HubMethodName("singleGroupNotice")]
+        public void SingleGroupNotice(string groupName, string notificationMessage, string notificationTypeId)
+        {
+            Clients.Group(groupName).receiveNotification(notificationMessage, notificationTypeId);
         }
     }
 }
