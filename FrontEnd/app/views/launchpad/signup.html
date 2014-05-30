@@ -1,6 +1,6 @@
  <div class="row">
     <div class="col-sm-7">
-        <form name="signupForm" ng-submit="model.login(signupForm.$valid)">
+        <form name="signupForm" ng-submit="model.signup(signupForm.$valid)">
             <label for="username">Username:</label>
             <input type="text" id="username" ng-model="newuser.username" required ng-minlength="3" />
             <p ng-show="signupForm.username.$invalid && ! signupForm.username.$pristine" class="help-block">You name is required.</p>

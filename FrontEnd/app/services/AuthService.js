@@ -6,7 +6,7 @@
     };
 
     AuthService.prototype.signup = function (user) {
-        this.$http.post(App.webApiURL, user).success();
+        this.$http.post(App.webApiURLForAccountRegister, user).success();
     };
     AuthService.$inject = ['$http'];
     return AuthService;

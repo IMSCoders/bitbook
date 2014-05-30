@@ -9,7 +9,7 @@
     }
 
     signup(user: IUser) {
-        this.$http.post(App.webApiURL, user).success();
+        this.$http.post(App.webApiURLForAccountRegister, user).success();
     }
 } 
 
