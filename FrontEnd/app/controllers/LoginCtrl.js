@@ -7,10 +7,7 @@
     LoginCtrl.prototype.login = function () {
         this.authService.login();
     };
-
-    LoginCtrl.prototype.signup = function () {
-    };
-    LoginCtrl.$inject = ['$scope'];
+    LoginCtrl.$inject = ['$scope', 'AuthService'];
     return LoginCtrl;
 })();
 

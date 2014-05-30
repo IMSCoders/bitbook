@@ -1,11 +1,7 @@
-﻿interface ILoginCtrl {
-    login: () => void;
-    signup:() =>void;
-}
-
-class LoginCtrl implements ILoginCtrl {
+﻿
+class LoginCtrl {
     
-    static $inject: string[] = ['$scope'];
+    static $inject: string[] = ['$scope' , 'AuthService'];
     constructor(private $scope, private authService:AuthService) {
         $scope.model = this;
         
@@ -16,9 +12,7 @@ class LoginCtrl implements ILoginCtrl {
         this.authService.login();
     }
 
-    signup() {
-        
-    }
+   
 }
 
 App.app.controller('LoginCtrl', LoginCtrl);

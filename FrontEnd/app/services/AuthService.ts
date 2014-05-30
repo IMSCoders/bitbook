@@ -7,6 +7,10 @@
     login(user:IUser) {
         
     }
-}
 
-App.app.service("AuthService", AuthService);
+    signup(user: IUser) {
+        
+    }
+} 
+
+App.app.service("AuthService", AuthService)
