@@ -12,5 +12,6 @@ namespace BitBook.Repository.Interfaces
         User GetByName(string nameOrPartOfName);
         List<User> GetUsersByName(string nameOrPartOfName);
         User GetByEmail(string mailAddress);
+        IEnumerable<string> GetCommonFriends(User userOne, User userTwo);
     }
 }

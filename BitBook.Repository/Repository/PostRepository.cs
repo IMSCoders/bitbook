@@ -10,9 +10,10 @@ using MongoDB.Driver.Builders;
 
 namespace BitBook.Repository.Repository
 {
-    public class PostRepository:GenericRepository<Post>,IPostRepository
+    public class PostRepository : GenericRepository<Post>, IPostRepository
     {
-        public PostRepository(DataContext context) : base(context, TableNames.Post)
+        public PostRepository(DataContext context)
+            : base(context, TableNames.Post)
         {
         }
 
@@ -25,6 +26,12 @@ namespace BitBook.Repository.Repository
         {
             var query = Query<Post>.EQ(e => e.Id, id);
             return Collection.Find(query).First();
+        }
+
+        public IEnumerable<Post> GetByUser(User user)
+        {
+            var query = Query<Post>.EQ(e => e.PostedBy, user.Id);
+            return Collection.Find(query).AsEnumerable();
         }
     }
 }

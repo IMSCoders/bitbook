@@ -35,6 +35,17 @@ namespace BitBook.Repository.Repository
             return Collection.Find(query).First();
         }
 
+        public IEnumerable<string> GetCommonFriends(User userOne, User userTwo)
+        {
+            var commonFriendIds = userOne.Friends.Intersect(userTwo.Friends);
+
+            foreach (var friendId in commonFriendIds)
+            {
+                var query = Query<User>.EQ(e => e.Id, friendId);
+                yield return Collection.FindOne(query).Name;
+            }
+        }
+
         public override void Delete(ObjectId id)
         {
             throw new NotImplementedException();

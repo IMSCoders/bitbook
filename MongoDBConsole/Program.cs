@@ -27,7 +27,6 @@ namespace MongoDBConsole
             ShowAll(userRepo);
 
             users[0].Name = "boot2";
-            users[0].
 
             userRepo.Update(users[0]);
 
