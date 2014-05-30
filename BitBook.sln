@@ -4,10 +4,14 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 12.0.30501.0
 MinimumVisualStudioVersion = 10.0.40219.1
 <<<<<<< HEAD
+<<<<<<< HEAD
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BitBookHub", "BitBookHub\BitBookHub.csproj", "{DC5144AB-0C7B-4C44-A066-0318B49B47A4}"
 =======
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BitBook.Repository", "BitBook.Repository\BitBook.Repository.csproj", "{32400734-CC90-4F48-908D-063338BD0EA7}"
 >>>>>>> a702545a52102880fbe2b428334ce2073178558d
+=======
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FrontEnd", "FrontEnd\FrontEnd.csproj", "{18E75A73-C7FA-4A99-9B3C-A71656C261E9}"
+>>>>>>> c4d3af4ea6a5858ee93b803f6121c09ccb85599c
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +19,7 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+<<<<<<< HEAD
 <<<<<<< HEAD
 		{DC5144AB-0C7B-4C44-A066-0318B49B47A4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{DC5144AB-0C7B-4C44-A066-0318B49B47A4}.Debug|Any CPU.Build.0 = Debug|Any CPU
@@ -26,6 +31,12 @@ Global
 		{32400734-CC90-4F48-908D-063338BD0EA7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{32400734-CC90-4F48-908D-063338BD0EA7}.Release|Any CPU.Build.0 = Release|Any CPU
 >>>>>>> a702545a52102880fbe2b428334ce2073178558d
+=======
+		{18E75A73-C7FA-4A99-9B3C-A71656C261E9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{18E75A73-C7FA-4A99-9B3C-A71656C261E9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{18E75A73-C7FA-4A99-9B3C-A71656C261E9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{18E75A73-C7FA-4A99-9B3C-A71656C261E9}.Release|Any CPU.Build.0 = Release|Any CPU
+>>>>>>> c4d3af4ea6a5858ee93b803f6121c09ccb85599c
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
