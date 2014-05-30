@@ -4,7 +4,7 @@ using Microsoft.Owin;
 using Owin;
 using Microsoft.AspNet.SignalR;
 using System.Configuration;
-
+using Microsoft.Owin.Cors;
 [assembly: OwinStartup(typeof(BitBookHub.Startup))]
 
 namespace BitBookHub
@@ -22,7 +22,17 @@ namespace BitBookHub
             config.EnableJavaScriptProxies = true;
             config.EnableDetailedErrors = true;
             config.EnableJSONP = true;
-            app.MapSignalR(config);
+            app.Map("/signalr", map =>
+            {
+               
+                map.UseCors(CorsOptions.AllowAll);
+                
+                // Run the SignalR pipeline. We're not using MapSignalR
+                // since this branch already runs under the "/signalr"
+                // path.
+                map.RunSignalR(config);
+            });
+            
         }
     }
 }

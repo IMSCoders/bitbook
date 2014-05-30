@@ -1,6 +1,7 @@
 ﻿module App {
-    export var app = angular.module('app', ['ui.router']);
+    export var app = angular.module('app', ['ui.router','ui.bootstrap']);
     var appViewPath = 'app/views/';
+    app.value('$', $);
     app.config([
         '$stateProvider', '$urlRouterProvider', ($stateProvider, $urlRouterProvider) => {
 
@@ -19,6 +20,10 @@
                         'feed@home': {
                             templateUrl: appViewPath + 'home/home-newsfeed.html',
                             controller: NewsFeedCtrl
+                        },
+                        'ticker@home': {
+                            //templateUrl: appViewPath + 'home/home-ticker.html',
+                            controller:HomeTickerCtrl
                         }
                     }
                 })

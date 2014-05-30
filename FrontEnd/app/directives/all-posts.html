@@ -1,5 +1,8 @@
 ﻿<div>
     <ul>
-        <li ng-repeat="post in data">{{post.description}} posted by {{post.postedBy}}</li>
+        <li ng-repeat="post in data">
+            {{post.description}} posted by {{post.postedBy}}
+            <button ng-click="model.likeEvent()" >Like</button>
+        </li>
     </ul>
 </div>

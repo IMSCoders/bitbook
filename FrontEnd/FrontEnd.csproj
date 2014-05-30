@@ -57,6 +57,10 @@
     <Content Include="Scripts\angular-touch.min.js" />
     <Content Include="Scripts\angular-ui-router.js" />
     <Content Include="Scripts\angular-ui-router.min.js" />
+    <Content Include="Scripts\angular-ui\ui-bootstrap-tpls.js" />
+    <Content Include="Scripts\angular-ui\ui-bootstrap-tpls.min.js" />
+    <Content Include="Scripts\angular-ui\ui-bootstrap.js" />
+    <Content Include="Scripts\angular-ui\ui-bootstrap.min.js" />
     <Content Include="Scripts\angular.js" />
     <Content Include="Scripts\angular.min.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -324,6 +328,7 @@
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="app\app.ts" />
+    <TypeScriptCompile Include="app\controllers\home\HomeTickerCtrl.ts" />
     <TypeScriptCompile Include="app\controllers\home\NewsFeedCtrl.ts" />
     <TypeScriptCompile Include="app\controllers\home\HomeHeaderCtrl.ts" />
     <TypeScriptCompile Include="app\controllers\LoginCtrl.ts" />
@@ -331,6 +336,7 @@
     <TypeScriptCompile Include="app\controllers\profile\ProfilePostsCtrl.ts" />
     <TypeScriptCompile Include="app\controllers\SignupCtrl.ts" />
     <TypeScriptCompile Include="app\directives\showAllPostsDirective.ts" />
+    <TypeScriptCompile Include="app\factories\SignalRFactory.ts" />
     <TypeScriptCompile Include="app\interfaces\IPost.ts" />
     <TypeScriptCompile Include="app\interfaces\IUser.ts" />
     <TypeScriptCompile Include="app\interfaces\IUserLogin.ts" />
@@ -348,6 +354,7 @@
     <TypeScriptCompile Include="Scripts\typings\angularjs\angular-scenario.d.ts" />
     <TypeScriptCompile Include="Scripts\typings\angularjs\angular.d.ts" />
     <TypeScriptCompile Include="Scripts\typings\jquery\jquery.d.ts" />
+    <TypeScriptCompile Include="Scripts\typings\signalr\signalr.d.ts" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Scripts\version.json" />
@@ -369,7 +376,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="app\factories\" />
     <Folder Include="app\views\user\" />
   </ItemGroup>
   <ItemGroup>
@@ -382,8 +388,12 @@
     <Reference Include="Microsoft.AspNet.SignalR.SystemWeb">
       <HintPath>..\packages\Microsoft.AspNet.SignalR.SystemWeb.2.0.3\lib\net45\Microsoft.AspNet.SignalR.SystemWeb.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.Owin">
-      <HintPath>..\packages\Microsoft.Owin.2.0.1\lib\net45\Microsoft.Owin.dll</HintPath>
+    <Reference Include="Microsoft.Owin, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.Owin.2.1.0\lib\net45\Microsoft.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Cors">
+      <HintPath>..\packages\Microsoft.Owin.Cors.2.1.0\lib\net45\Microsoft.Owin.Cors.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Owin.Host.SystemWeb">
       <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.2.0.1\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
@@ -402,6 +412,9 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Cors">
+      <HintPath>..\packages\Microsoft.AspNet.Cors.5.0.0\lib\net45\System.Web.Cors.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Startup.cs" />
