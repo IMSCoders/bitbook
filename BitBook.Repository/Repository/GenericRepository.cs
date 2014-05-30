@@ -27,12 +27,6 @@ namespace BitBook.Repository.Repository
             Collection.Insert(entity);
         }
 
-        public abstract void Delete(ObjectId id);
-
-        public abstract T GetById(ObjectId id);
-
-        public abstract T Update(T entity);
-
         public IEnumerable<T> GetAll()
         {
             return Collection.FindAll();
@@ -42,5 +36,11 @@ namespace BitBook.Repository.Repository
         {
             throw new NotImplementedException();
         }
+
+        public abstract void Delete(ObjectId id);
+
+        public abstract T GetById(ObjectId id);
+
+        public abstract T Update(T entity);
     }
 }
