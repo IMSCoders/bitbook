@@ -15,7 +15,7 @@ namespace BitBook.Repository
         public DataContext()
         {
             var connectionString = new MongoConnectionStringBuilder(
-                ConfigurationManager.AppSettings["MongoConnection"]);
+                ConfigurationManager.ConnectionStrings["MongoConnection"].ConnectionString);
             var databaseName = ConfigurationManager.AppSettings["MongoDbName"];
             var client = new MongoClient(connectionString.ConnectionString);
             var server = client.GetServer();

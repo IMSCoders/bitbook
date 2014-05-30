@@ -25,11 +25,11 @@ namespace BitBook.WebApi.Controllers
 {
     [Authorize]
     [RoutePrefix("api/Account")]
-    [EnableCors(origins: "http://localhost:14170", headers: "*", methods: "*")]
+    [EnableCors(origins: "http://localhost:61406", headers: "*", methods: "*")]
     public class AccountController : ApiController
     {
         private const string LocalLoginProvider = "Local";
-        private readonly UserManager<User> _userManager;
+        private UserManager<User> _userManager;
         private IUserRepository _userRepository;
         public AccountController(IUserRepository userRepository)
         {
@@ -39,6 +39,8 @@ namespace BitBook.WebApi.Controllers
 
         public AccountController()
         {
+            this._userRepository = new UserRepository(new DataContext());
+            _userManager = new UserManager<User>(new UserStore<User>(ConfigurationManager.AppSettings["MongoDbFullUrlForuserStore"]));
             
         }
         public AccountController(UserManager<User> userManager,
