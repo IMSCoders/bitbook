@@ -39,7 +39,10 @@ namespace BitBook.Repository.Repository
 
         public void Save()
         {
-            throw new NotImplementedException();
+            foreach (var entity in Collection.FindAll())
+            {
+                Collection.Save(entity);
+            }
         }
 
         public abstract void Delete(ObjectId id);

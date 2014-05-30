@@ -42,12 +42,9 @@ namespace BitBook.Repository.Repository
 
         public override User GetById(ObjectId id)
         {
-            throw new NotImplementedException();
+            var query = Query<User>.EQ(e => e.Id, id);
+            return Collection.Find(query).First();
         }
 
-        public override User Update(User entity)
-        {
-            throw new NotImplementedException();
-        }
     }
 }

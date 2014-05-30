@@ -16,9 +16,10 @@ namespace BitBook.Repository
         {
             var connectionString = new MongoConnectionStringBuilder(
                 ConfigurationManager.ConnectionStrings["MongoConnection"].ConnectionString);
+            var databaseName = ConfigurationManager.AppSettings["MongoDbName"];
             var client = new MongoClient(connectionString.ConnectionString);
             var server = client.GetServer();
-            MongoDatabase = server.GetDatabase("local");
+            MongoDatabase = server.GetDatabase(databaseName);
         }
     }
 }

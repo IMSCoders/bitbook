@@ -4,6 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using BitBook.Repository;
+using BitBook.Repository.Entity;
+using BitBook.Repository.Repository;
+using MongoDB.Bson;
 
 namespace MongoDBConsole
 {
@@ -16,20 +19,24 @@ namespace MongoDBConsole
 
             var users = new List<User>
                 {
-                    //new User {Id = 2304, Name = "MIT"},
-                    //new User {Id = 2305, Name = "Adib"},
-                    //new User {Id = 2306, Name = "AMIT"},
-                    new User {Id = 2308, Name = "Boot"}
+                    new User {Name = "Boot3", Id = new ObjectId("1234")}
                 };
 
             AddUsers(users, userRepo);
 
             ShowAll(userRepo);
 
+            users[0].Name = "boot2";
+            users[0].
+
+            userRepo.Update(users[0]);
+
+            ShowAll(userRepo);
+
             Console.ReadKey();
         }
 
-        private static void AddUsers(List<User> users, UserRepository userRepo)
+        private static void AddUsers(IEnumerable<User> users, UserRepository userRepo)
         {
             foreach (var user in users)
             {

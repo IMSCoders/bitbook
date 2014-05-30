@@ -10,7 +10,7 @@ using MongoDB.Driver.Builders;
 
 namespace BitBook.Repository.Repository
 {
-    class PostRepository:GenericRepository<Post>,IPostRepository
+    public class PostRepository:GenericRepository<Post>,IPostRepository
     {
         public PostRepository(DataContext context) : base(context, TableNames.Post)
         {

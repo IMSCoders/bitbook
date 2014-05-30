@@ -21,8 +21,10 @@ namespace BitBook.Repository.Entity
         [BsonElement]
         public string PhotoPath { get; set; }
         [BsonElement]
-        public bool IsloggedIn { get; set; }
-        [Bson]
+        public bool IsLoggedIn { get; set; }
+        [BsonElement]
+        public bool IsDeleted { get; set; }
+        [BsonElement]
         public List<ObjectId> Friends { get; set; }
     }
 }
