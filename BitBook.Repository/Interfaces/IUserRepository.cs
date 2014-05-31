@@ -10,5 +10,6 @@ namespace BitBook.Repository.Interfaces
         IEnumerable<User> GetAllSafely();
         IEnumerable<User> GetUsersByName(string nameOrPartOfName);
         IEnumerable<string> GetCommonFriends(User userOne, User userTwo);
+
     }
 }

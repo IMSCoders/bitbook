@@ -27,6 +27,9 @@ namespace BitBook.Repository.Entity
         [BsonElement]
         public List<string> Friends { get; set; }
 
+        [BsonElement]
+        public List<string> Requests { get; set; }
+
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<User> manager, string authenticationType)
         {
             // Note the authenticationType must match the one defined in CookieAuthenticationOptions.AuthenticationType
