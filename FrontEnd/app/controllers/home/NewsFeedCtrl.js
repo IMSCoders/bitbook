@@ -1,12 +1,14 @@
 ﻿var NewsFeedCtrl = (function () {
-    function NewsFeedCtrl($scope, postsService, signalRFactory, commentService) {
+    function NewsFeedCtrl($scope, postsService, signalRFactory, commentService, joinGroupFactory) {
         this.$scope = $scope;
         this.postsService = postsService;
         this.signalRFactory = signalRFactory;
         this.commentService = commentService;
+        this.joinGroupFactory = joinGroupFactory;
         $scope.model = this;
         this.getPosts();
         this.signalRFactory.initialize(this.broadcastMessage);
+        this.joinGroupFactory.initialize();
     }
     NewsFeedCtrl.prototype.getPosts = function () {
         this.posts = this.$scope.posts = this.postsService.getPosts();
@@ -34,7 +36,7 @@
         alert('add comment');
         this.commentService.createComment();
     };
-    NewsFeedCtrl.$inject = ['$scope', 'PostsService', 'SignalRFactory'];
+    NewsFeedCtrl.$inject = ['$scope', 'PostsService', 'SignalRFactory', 'CommentService', 'JoinGroupFactory'];
     return NewsFeedCtrl;
 })();
 //# sourceMappingURL=NewsFeedCtrl.js.map

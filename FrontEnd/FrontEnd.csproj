@@ -342,6 +342,7 @@
     <TypeScriptCompile Include="app\controllers\SignupCtrl.ts" />
     <TypeScriptCompile Include="app\directives\allFriendsDirective.ts" />
     <TypeScriptCompile Include="app\directives\showAllPostsDirective.ts" />
+    <TypeScriptCompile Include="app\factories\JoinGroupFactory.ts" />
     <TypeScriptCompile Include="app\factories\SignalRFactory.ts" />
     <TypeScriptCompile Include="app\interfaces\IPost.ts" />
     <TypeScriptCompile Include="app\interfaces\IUser.ts" />

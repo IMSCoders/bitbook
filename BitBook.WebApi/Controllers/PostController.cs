@@ -30,7 +30,7 @@ namespace BitBook.WebApi.Controllers
     {
         private const string LocalLoginProvider = "Local";
 
-        private IPostRepository _postRepository;
+        private IRepository<Post> _postRepository;
 
         public PostController()
         {
@@ -51,7 +51,7 @@ namespace BitBook.WebApi.Controllers
             var post = new Post()
             {
                 Description = model.Description,
-                PostedBy = new MongoDB.Bson.ObjectId(model.PostedBy),
+                PostedBy = model.PostedBy,
                 PostedTime = DateTime.Now
             };
 
