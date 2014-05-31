@@ -4,10 +4,18 @@ var AuthService = (function () {
         this.$http = $http;
     }
     AuthService.prototype.login = function (user) {
+        this.$http.post(App.webApiUrl + 'Account/Register', user).success(function () {
+            alert('success msg');
+        }).error(function (data, status, headers, config) {
+            // called asynchronously if an error occurs
+            // or server returns response with an error status.
+        });
     };
 
     AuthService.prototype.signup = function (user) {
-        this.$http.post(App.webApiURLForAccountRegister, user).success().error(function (data, status, headers, config) {
+        this.$http.post(App.webApiUrl + 'Account/Register', user).success(function () {
+            alert('success msg');
+        }).error(function (data, status, headers, config) {
             // called asynchronously if an error occurs
             // or server returns response with an error status.
         });

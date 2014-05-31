@@ -8,25 +8,26 @@ class PostsService {
     getPosts(): IPost[] {
         var user: IPost[] = [];
 
-        user[0] = {
-            description: "This is description",
-            id: 1,
-            postedTime: 'time',
-            postedBy: "Adib"
-        }
-        user[1] = {
-            description: "This is another description",
-            id: 2,
-            postedBy: "Amit",
-            postedTime: 'time'
-        }
+        //user[0] = {
+        //    description: "This is description",
+        //    id: 1,
+        //    postedTime: 'time',
+        //    postedBy: "Adib"
+        //}
+        //user[1] = {
+        //    description: "This is another description",
+        //    id: 2,
+        //    postedBy: "Amit",
+        //    postedTime: 'time'
+        //}
+
 
         return user;
     }
 
     createPost(post:IPost) {
         console.log(post);
-        this.$http.post(App.webApiURLForPostStatus, post).success(() => {
+        this.$http.post(App.webApiUrl+'Post/PostStatus', post).success(() => {
             alert('in success');
         }).error(function (data, status, headers, config) {
             alert('in error');
