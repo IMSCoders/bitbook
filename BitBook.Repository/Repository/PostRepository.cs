@@ -20,7 +20,7 @@ namespace BitBook.Repository.Repository
             throw new NotImplementedException();
         }
 
-        public override Post GetById(ObjectId id)
+        public override Post GetById(string id)
         {
             var query = Query<Post>.EQ(e => e.Id, id);
             return InitializeLists(Collection.Find(query).First());

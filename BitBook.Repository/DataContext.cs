@@ -23,7 +23,7 @@ namespace BitBook.Repository
             var server = client.GetServer();
             MongoDatabase = server.GetDatabase(databaseName);
 
-            InitializeMapping();
+           // InitializeMapping();
         }
 
         private static void InitializeMapping()
