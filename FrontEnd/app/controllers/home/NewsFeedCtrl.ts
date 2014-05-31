@@ -14,7 +14,12 @@
     }
 
     getPosts() {
-        this.posts = this.$scope.posts = this.postsService.getPosts();
+        this.postsService.getPosts();
+//        ajax.done(() => {
+//            alert('posts received');
+//        }).error(() => {
+//            alert('posts error');
+//        });
     }
 
     createPost() {

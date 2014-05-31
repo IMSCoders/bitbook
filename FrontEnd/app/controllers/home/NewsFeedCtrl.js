@@ -12,7 +12,12 @@
         //this.joinGroupFactory.initialize();
     }
     NewsFeedCtrl.prototype.getPosts = function () {
-        this.posts = this.$scope.posts = this.postsService.getPosts();
+        this.postsService.getPosts();
+        //        ajax.done(() => {
+        //            alert('posts received');
+        //        }).error(() => {
+        //            alert('posts error');
+        //        });
     };
 
     NewsFeedCtrl.prototype.createPost = function () {

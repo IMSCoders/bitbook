@@ -80,7 +80,7 @@ namespace BitBook.WebApi.Controllers
             
             
         }
-
+        [OverrideAuthentication]
         [Route("GetAllPosts")]
         [AllowAnonymous]
         public IHttpActionResult GetAllposts()

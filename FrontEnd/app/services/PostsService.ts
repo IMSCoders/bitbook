@@ -1,32 +1,22 @@
-﻿
+﻿/// <reference path="../references.ts" />
+
 class PostsService {
     static $inject: string[] = ['$http'];
     constructor(private $http) {
 
     }
 
-    getPosts(): IPost[] {
-        var user: IPost[] = [];
-
-        //user[0] = {
-        //    description: "This is description",
-        //    id: 1,
-        //    postedTime: 'time',
-        //    postedBy: "Adib"
-        //}
-        //user[1] = {
-        //    description: "This is another description",
-        //    id: 2,
-        //    postedBy: "Amit",
-        //    postedTime: 'time'
-        //}
-
-
-        return user;
+    getPosts() {
+        
+        this.$http.get(App.webApiUrl + 'Post/GetAllPosts').success(() => {
+            alert('success');
+        }).error((data, status, headers, config) => {
+            alert('failure');
+        });
     }
 
+
     createPost(post:IPost) {
-        console.log(post);
         this.$http.post(App.webApiUrl+'Post/PostStatus', post).success(() => {
             alert('in success');
         }).error(function (data, status, headers, config) {
