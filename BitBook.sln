@@ -1,8 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.30501.0
-MinimumVisualStudioVersion = 10.0.40219.1
+# Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BitBookHub", "BitBookHub\BitBookHub.csproj", "{DC5144AB-0C7B-4C44-A066-0318B49B47A4}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BitBook.Repository", "BitBook.Repository\BitBook.Repository.csproj", "{32400734-CC90-4F48-908D-063338BD0EA7}"
@@ -14,6 +12,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BitBook.WebApi", "BitBook.WebApi\BitBook.WebApi.csproj", "{437CBA08-0B2A-4491-84C9-33BDEC865107}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BitBook.WebApi.Tests", "BitBook.WebApi.Tests\BitBook.WebApi.Tests.csproj", "{02082683-1AD9-4EE8-835E-1DB6CA1300D1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MongoDBConsole", "MongoDBConsole\MongoDBConsole.csproj", "{AB48B3B5-CE58-4D5F-BE15-048CB53C61EC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +45,10 @@ Global
 		{02082683-1AD9-4EE8-835E-1DB6CA1300D1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{02082683-1AD9-4EE8-835E-1DB6CA1300D1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{02082683-1AD9-4EE8-835E-1DB6CA1300D1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AB48B3B5-CE58-4D5F-BE15-048CB53C61EC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AB48B3B5-CE58-4D5F-BE15-048CB53C61EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AB48B3B5-CE58-4D5F-BE15-048CB53C61EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AB48B3B5-CE58-4D5F-BE15-048CB53C61EC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

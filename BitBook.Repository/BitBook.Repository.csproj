@@ -30,9 +30,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="AspNet.Identity.MongoDB">
-      <HintPath>..\packages\AspNet.Identity.MongoDB.1.0.8\lib\net45\AspNet.Identity.MongoDB.dll</HintPath>
-    </Reference>
     <Reference Include="Microsoft.AspNet.Identity.Core">
       <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.0.1\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
     </Reference>
@@ -56,6 +53,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DataContext.cs" />
+    <Compile Include="Entity\Comment.cs" />
     <Compile Include="Interfaces\IRepository.cs" />
     <Compile Include="Entity\Post.cs" />
     <Compile Include="Entity\User.cs" />

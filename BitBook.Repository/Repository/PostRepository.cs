@@ -23,13 +23,25 @@ namespace BitBook.Repository.Repository
         public override Post GetById(ObjectId id)
         {
             var query = Query<Post>.EQ(e => e.Id, id);
-            return Collection.Find(query).First();
+            return InitializeLists(Collection.Find(query).First());
         }
 
         public IEnumerable<Post> GetByUser(User user)
         {
             var query = Query<Post>.EQ(e => e.PostedBy, user.Id);
-            return Collection.Find(query).AsEnumerable();
+            return Collection.Find(query).AsEnumerable().OrderByDescending(p => p.PostedTime).Select(InitializeLists);
+        }
+
+        public IEnumerable<Post> GetAllSafely()
+        {
+            return GetAll().Select(InitializeLists);
+        }
+
+        private Post InitializeLists(Post post)
+        {
+            if (post.Likes == null) post.Likes = new List<string>();
+            if(post.Comments==null) post.Comments = new List<Comment>();
+            return post;
         }
     }
 }

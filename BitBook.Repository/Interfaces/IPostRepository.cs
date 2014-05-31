@@ -11,5 +11,6 @@ namespace BitBook.Repository.Interfaces
     interface IPostRepository
     {
         IEnumerable<Post> GetByUser(User user);
+        IEnumerable<Post> GetAllSafely();
     }
 }
