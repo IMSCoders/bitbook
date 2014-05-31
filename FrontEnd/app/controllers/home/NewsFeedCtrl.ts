@@ -17,8 +17,9 @@
         var description = this.$scope.post.description;
         var post :IPost = {
             description: description,
-            postedBy:'Adib'
+            postedBy:'5388ea3fcd8c372014f4593e'
         }
+
         this.postsService.createPost(post);
         this.signalRFactory.sendRequest();
     }

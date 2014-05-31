@@ -1,13 +1,11 @@
 ﻿<div>
-    <ul>
-        <li ng-repeat="post in data">
-            {{post.description}} posted by {{post.postedBy}}
+        <div ng-repeat="post in data">
+            {{post.description}} posted by1 {{post.postedBy}}
             <div>
                 <button ng-click="model.likeEvent()" >Like</button>
                 <br />
                 <textarea ng-model="comment.description"  placeholder="Comment.."></textarea>
                 <button ng-click="model.addComment()" >Comment</button>
             </div>
-        </li>
-    </ul>
+        </div>
 </div>

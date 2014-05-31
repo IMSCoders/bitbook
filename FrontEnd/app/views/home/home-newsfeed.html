@@ -1,13 +1,12 @@
 ﻿<div class="row">
-    <div class="">
+    <div class="col">
         <form name="createPostForm" ng-submit="model.createPost(createPostForm.$valid)">
-         
-        <textarea placeholder="What's on your mind" ng-model="post.description" required></textarea>
-            <p ng-show="createPostForm.post.description.$invalid && ! createPostForm.post.description.$pristine" class="help-block">This field is required</p>
-            <button class="btn btn-primary" type="submit" ng-disabled="createPostForm.$invalid" >Post</button>
-        </form>
-    </div>
 
-<div class="" data="model.posts" show-all-posts-directive ></div>
-   
+            <textarea placeholder="What's on your mind" ng-model="post.description" required></textarea>
+            <p ng-show="createPostForm.post.description.$invalid && ! createPostForm.post.description.$pristine" class="help-block">This field is required</p>
+            <button class="btn btn-primary" type="submit" ng-disabled="createPostForm.$invalid">Post</button>
+        </form>
+        <div class="" data="model.posts" show-all-posts-directive></div>
+    </div>
 </div>
+

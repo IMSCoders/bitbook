@@ -26,7 +26,7 @@
                         },
                         'ticker@home': {
                             //templateUrl: appViewPath + 'home/home-ticker.html',
-                            controller:HomeTickerCtrl
+                            controller: HomeTickerCtrl
                         }
                     }
                 })
@@ -34,30 +34,30 @@
                     url: '/profile',
                     views: {
                         '': {
-                            templateUrl:appViewPath+'/profile/profile.html'
+                            templateUrl: appViewPath + '/profile/profile.html'
                         },
                         'info@profile': {
                             templateUrl: appViewPath + '/profile/profile-info.html',
                             controller: ProfileInfoCtrl,
                             resolve: {
-                                user:() => {
+                                user: () => {
                                     var userService = new UsersService();
                                     //return userService.getUser("1");
                                     return {
                                         username: 'username',
                                         name: 'name',
-                                        email:'email'
+                                        email: 'email'
                                     }
                                 }
                             }
                         },
                         'userposts@profile': {
                             templateUrl: appViewPath + 'profile/profile-posts.html',
-                            controller:ProfilePostsCtrl
+                            controller: ProfilePostsCtrl
                         },
                         'friends@profile': {
                             templateUrl: appViewPath + 'profile/profile-friends.html',
-                            controller:ProfileFriendsCtrl
+                            controller: ProfileFriendsCtrl
                         }
                     }
                 })
@@ -79,4 +79,21 @@
                 });
         }
     ]);
+
+    app.directive('match', function () {
+        return {
+            require: 'ngModel',
+            restrict: 'A',
+            scope: {
+                match: '='
+            },
+            link: function (scope, elem, attrs, ctrl) {
+                scope.$watch(function () {
+                    return (ctrl.$pristine && angular.isUndefined(ctrl.$modelValue)) || scope.match === ctrl.$modelValue;
+                }, function (currentValue) {
+                        ctrl.$setValidity('match', currentValue);
+                    });
+            }
+        };
+    });
 }
