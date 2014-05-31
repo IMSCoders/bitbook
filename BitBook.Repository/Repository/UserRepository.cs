@@ -72,5 +72,7 @@ namespace BitBook.Repository.Repository
             userOne.Requests.Add(userTwo.Id);
         }
 
+        //public void AcceptFriend(User )
+
     }
 }

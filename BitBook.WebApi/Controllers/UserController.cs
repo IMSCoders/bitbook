@@ -22,17 +22,41 @@ namespace BitBook.WebApi.Controllers
             _userRepository = new UserRepository(new DataContext());
         }
         [Route("AddRequest")]
+        [AllowAnonymous]
         public IHttpActionResult GetUser(string requester, string requested)
         {
             var requester_user = _userRepository.GetByName(requester);
             var requested_user = _userRepository.GetByName(requested);
-            if (requested_user != null && requester_user != null) {
+            if (requested_user != null && requester_user != null)
+            {
+                if (requested_user.Requests.Contains(requester_user.Id)) return BadRequest();
                 requested_user.Requests.Add(requester_user.Id);
                 _userRepository.Update(requested_user);
                 return Ok();
             }
             else return
                 BadRequest();
+        }
+
+        [Route("PendingRequests")]
+        [AllowAnonymous]
+        public IHttpActionResult GetPendingRequests(string currentuserName)
+        {
+            var user = _userRepository.GetByName(currentuserName);
+            if (user == null) return BadRequest();
+            List<string> usernames = new List<string>();
+            foreach (string userid in user.Requests)
+            {
+                usernames.Add(_userRepository.GetById(userid).UserName);
+            }
+            return Ok(usernames);
+
+
+        }
+
+        public IHttpActionResult AcceptFriendRequest(string currentUserName, string requestername, Boolean isAccepted)
+        {
+            return Ok();
         }
     }
 }

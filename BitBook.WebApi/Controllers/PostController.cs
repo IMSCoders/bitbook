@@ -81,5 +81,12 @@ namespace BitBook.WebApi.Controllers
             
         }
 
+        [Route("GetAllPosts")]
+        [AllowAnonymous]
+        public IHttpActionResult GetAllposts()
+        {
+            var posts = _postRepository.GetAll();
+            return Ok(posts);
+        }
     }
 }
