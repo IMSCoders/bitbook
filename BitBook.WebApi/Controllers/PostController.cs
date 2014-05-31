@@ -32,10 +32,12 @@ namespace BitBook.WebApi.Controllers
         private const string LocalLoginProvider = "Local";
 
         public IRepository<Post> _postRepository;
+        private UserRepository userRepo;
 
         public PostController()
         {
             this._postRepository = new PostRepository(new DataContext());
+            this.userRepo = new UserRepository(new DataContext());
         }
 
         [OverrideAuthentication]
@@ -88,5 +90,15 @@ namespace BitBook.WebApi.Controllers
             var posts = _postRepository.GetAll();
             return Ok(posts);
         }
+
+        [Route("PostComment")]
+        [AllowAnonymous]
+        public IHttpActionResult PostComment(string postId, string commentDescription, string userName)
+        {
+            
+            
+            return Ok(); 
+        }
+
     }
 }

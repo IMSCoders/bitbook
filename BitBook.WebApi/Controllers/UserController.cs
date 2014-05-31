@@ -65,9 +65,26 @@ namespace BitBook.WebApi.Controllers
             else return Ok(user);
         }
 
-        public IHttpActionResult AcceptFriendRequest(string currentUserName, string requestername, Boolean isAccepted)
+        public IHttpActionResult AcceptFriendRequest(string currentUserName, string requesterName, Boolean isAccepted)
         {
-            return Ok();
+            var currentUser = _userRepository.GetByName(currentUserName);
+            var requesterUser = _userRepository.GetByName(requesterName);
+            if (requesterUser == null) return BadRequest();
+            if (isAccepted)
+            {
+                currentUser.Friends.Add(requesterUser.Id);
+                requesterUser.Friends.Add(currentUser.Id);
+                _userRepository.Update(currentUser);
+                _userRepository.Update(requesterUser);
+                return Ok();
+            }
+            else
+            {
+                currentUser.Requests.Remove(requesterUser.Id);
+                _userRepository.Update(currentUser);
+                return Ok();
+            }
+
         }
     }
 }
