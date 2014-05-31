@@ -1,27 +1,27 @@
 <div>
     <form name="signupForm" ng-submit="model.login(signupForm.$valid)">
         <p>
-            <label  for="username">Username:</label>
-            <input  type="text" id="username" ng-model="newuser.username" required ng-minlength="3" />
+            <label for="username">Username:</label>
+            <input type="text" id="username" ng-model="newuser.username" required ng-minlength="3" />
         </p>
         <p ng-show="signupForm.username.$invalid && ! signupForm.username.$pristine" class="help-block">You name is required.</p>
         <p>
-            <label  for="email">Email:</label>
-            <input  type="email" id="email" ng-model="newuser.email" required />
+            <label for="email">Email:</label>
+            <input type="email" id="email" ng-model="newuser.email" required />
         </p>
         <p ng-show="signupForm.email.$invalid && ! signupForm.email.$pristine" class="help-block">You email address is required.</p>
         <p>
-            <label  for="password">Password:</label>
-            <input  type="password" id="password" ng-model="newuser.password" required />
+            <label for="password" >Password: </label><input ng-model="newuser.password" type="password" name="password" data-ng-class="{'ng-invalid':signup.confirmPassword.$error.match}" required/>     
         </p>
-        <p ng-show="signupForm.email.$invalid && ! signupForm.email.$pristine" class="help-block">You email address is required.</p>
         <p>
-            <label for="confirm-password">Confirm Password:</label>
-            <input type="password" id="confirm-password" ng-model="newuser.confirm-password" data-match="newuser.password" required />
-        </p>
-        <p ng-show="signupForm.confirm-password.$error.match">Passwords do not match!</p>
+            <label for="confirmPassword">Confirm Password</label> <input ng-model="newuser.passwordConfirm" type="password" data-match="newuser.password" name="confirmPassword" required />
+        </p> 
+        <div data-ng-show="signupForm.confirmPassword.$error.match">Passwords do not match!</div>
         <p>
             <button class="btn btn-primary" type="submit" ng-disabled="signupForm.$invalid">Sign up</button>
         </p>
+
     </form>
 </div>
+
+
