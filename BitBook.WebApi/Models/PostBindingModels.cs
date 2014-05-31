@@ -14,11 +14,9 @@ namespace BitBook.WebApi.Models
     public class PostStatusBindingModel { 
         [Required]
         [Display(Name = "Status")]
-        [StringLength(100, ErrorMessage = "The {0} must be at least {2} characters long.")]
         public string Description { get; set; }
         
         [Required]
-        
-        public ObjectId PostedBy { get; set; }        
+        public string PostedBy { get; set; }        
     }
 }

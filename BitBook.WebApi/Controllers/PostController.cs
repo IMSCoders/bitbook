@@ -20,6 +20,7 @@ using BitBook.WebApi.Results;
 using MongoDB.AspNet.Identity;
 using System.Web.Http.Cors;
 using System.Configuration;
+using MongoDB.Bson;
 namespace BitBook.WebApi.Controllers
 {
     [Authorize]
@@ -36,6 +37,9 @@ namespace BitBook.WebApi.Controllers
             this._postRepository = new PostRepository(new DataContext());
         }
 
+        [OverrideAuthentication]
+        //[HostAuthentication(DefaultAuthenticationTypes.ExternalCookie)]
+        [AllowAnonymous]
         [Route("PostStatus")]
         public async Task<IHttpActionResult> PostStatus(PostStatusBindingModel model)
         {
@@ -47,7 +51,7 @@ namespace BitBook.WebApi.Controllers
             var post = new Post()
             {
                 Description = model.Description,
-                PostedBy = model.PostedBy,
+                PostedBy = new MongoDB.Bson.ObjectId(model.PostedBy),
                 PostedTime = DateTime.Now
             };
 
@@ -56,6 +60,21 @@ namespace BitBook.WebApi.Controllers
             
         }
 
+        [OverrideAuthentication]
+        //[HostAuthentication(DefaultAuthenticationTypes.ExternalCookie)]
+        [AllowAnonymous]
+        [Route("GetPostById")]
+        public async Task<IHttpActionResult> GetPostById(string id)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+            var post = _postRepository.GetById(new ObjectId(id));
 
+            return Ok(post);
+            
+
+        }
     }
 }

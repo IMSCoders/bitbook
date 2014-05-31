@@ -1,5 +1,6 @@
 ﻿var PostsService = (function () {
-    function PostsService() {
+    function PostsService($http) {
+        this.$http = $http;
     }
     PostsService.prototype.getPosts = function () {
         var user = [];
@@ -22,8 +23,12 @@
 
     PostsService.prototype.createPost = function (post) {
         console.log(post);
+        this.$http.post(App.webApiURLForPostStatus, post).success().error(function (data, status, headers, config) {
+            // called asynchronously if an error occurs
+            // or server returns response with an error status.
+        });
     };
-    PostsService.$inject = [];
+    PostsService.$inject = ['$http'];
     return PostsService;
 })();
 
