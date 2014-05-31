@@ -51,7 +51,7 @@ namespace BitBook.WebApi.Controllers
                 PostedTime = DateTime.Now
             };
 
-           _postRepository.Add(post);
+          _postRepository.Add(post);
            return Ok(post.Id);
             
         }
