@@ -23,7 +23,7 @@ namespace BitBook.WebApi.Controllers
         }
         [Route("AddRequest")]
         [AllowAnonymous]
-        public IHttpActionResult GetUser(string requester, string requested)
+        public IHttpActionResult AddRequest(string requester, string requested)
         {
             var requester_user = _userRepository.GetByName(requester);
             var requested_user = _userRepository.GetByName(requested);
@@ -52,6 +52,17 @@ namespace BitBook.WebApi.Controllers
             return Ok(usernames);
 
 
+        }
+
+
+        [Route("FindUserByName")]
+        [AllowAnonymous]
+
+        public IHttpActionResult FindUserByUserName(string userName)
+        {
+            var user = _userRepository.GetByName(userName);
+            if (user == null) return BadRequest();
+            else return Ok(user);
         }
 
         public IHttpActionResult AcceptFriendRequest(string currentUserName, string requestername, Boolean isAccepted)
