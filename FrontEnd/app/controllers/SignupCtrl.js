@@ -20,4 +20,3 @@
     SignupCtrl.$inject = ['$scope', 'AuthService'];
     return SignupCtrl;
 })();
-//# sourceMappingURL=SignupCtrl.js.map

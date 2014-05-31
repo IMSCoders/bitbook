@@ -8,4 +8,3 @@
 })();
 
 App.app.service("UsersService", UsersService);
-//# sourceMappingURL=UsersService.js.map

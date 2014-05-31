@@ -15,4 +15,3 @@
 App.app.directive("allFriendsDirective", function () {
     return AllFriendsDirective.friends();
 });
-//# sourceMappingURL=allFriendsDirective.js.map

@@ -22,6 +22,7 @@ using System.Web.Http.Cors;
 using System.Configuration;
 using MongoDB.Bson;
 using BitBook.WebApi.HubClient;
+using System.Linq;
 namespace BitBook.WebApi.Controllers
 {
     [Authorize]
@@ -58,9 +59,9 @@ namespace BitBook.WebApi.Controllers
                 PostedTime = DateTime.Now
             };
 
-          _postRepository.Add(post);
-           return Ok();
-            
+            _postRepository.Add(post);
+            return Ok();
+
         }
 
         [OverrideAuthentication]
@@ -76,11 +77,11 @@ namespace BitBook.WebApi.Controllers
             var post = _postRepository.GetById(id);
 
             //var hubClient = BitBookHubClient.ReturnInstance();
-//            hubClient.SendNewPostToHome(post.)
+            //            hubClient.SendNewPostToHome(post.)
 
             return Ok(post);
-            
-            
+
+
         }
         [OverrideAuthentication]
         [Route("GetAllPosts")]
@@ -88,16 +89,25 @@ namespace BitBook.WebApi.Controllers
         public IHttpActionResult GetAllposts()
         {
             var posts = _postRepository.GetAll();
-            return Ok(posts);
+            var modifiedPosts = posts.ToList();
+            for (int i = 0; i < posts.Count(); i++)
+            {
+                var postedBy = modifiedPosts[i].PostedBy;
+                var user = userRepo.GetById(postedBy);
+                if (user == null)
+                    modifiedPosts[i].PostedBy = "User Removed";
+                else modifiedPosts[i].PostedBy = userRepo.GetById(postedBy).UserName;
+            }
+            return Ok(modifiedPosts);
         }
 
         [Route("PostComment")]
         [AllowAnonymous]
         public IHttpActionResult PostComment(string postId, string commentDescription, string userName)
         {
-            
-            
-            return Ok(); 
+
+
+            return Ok();
         }
 
     }

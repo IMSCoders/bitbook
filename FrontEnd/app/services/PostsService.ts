@@ -7,12 +7,8 @@ class PostsService {
     }
 
     getPosts() {
-        
-        this.$http.get(App.webApiUrl + 'Post/GetAllPosts').success(() => {
-            alert('success');
-        }).error((data, status, headers, config) => {
-            alert('failure');
-        });
+
+        return this.$http.get(App.webApiUrl + 'Post/GetAllPosts');
     }
 
 

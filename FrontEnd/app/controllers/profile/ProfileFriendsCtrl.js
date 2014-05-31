@@ -7,7 +7,6 @@
         $scope.model = this;
     }
     ProfileFriendsCtrl.prototype.getAllFriends = function () {
-        //this.friendsList = this.friendsService.getAllFriends("1");
     };
 
     ProfileFriendsCtrl.prototype.toggled = function (open) {
@@ -22,4 +21,3 @@
     ProfileFriendsCtrl.$inject = ['$scope', 'FriendsService'];
     return ProfileFriendsCtrl;
 })();
-//# sourceMappingURL=ProfileFriendsCtrl.js.map

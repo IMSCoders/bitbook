@@ -3,7 +3,6 @@
     App.app = angular.module('app', ['ui.router', 'ui.bootstrap']);
     App.webApiUrl = 'http://localhost:14170/api/';
 
-    //export var webApiURLForPostStatus = 'http://localhost:14170/api/Post/PostStatus';
     var appViewPath = 'app/views/';
     App.app.value('$', $);
     App.app.config([
@@ -23,7 +22,6 @@
                         controller: NewsFeedCtrl
                     },
                     'ticker@home': {
-                        //templateUrl: appViewPath + 'home/home-ticker.html',
                         controller: HomeTickerCtrl
                     }
                 }
@@ -40,7 +38,6 @@
                             user: function () {
                                 var userService = new UsersService();
 
-                                //return userService.getUser("1");
                                 return {
                                     username: 'username',
                                     name: 'name',
@@ -94,4 +91,3 @@
         };
     });
 })(App || (App = {}));
-//# sourceMappingURL=app.js.map

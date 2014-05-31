@@ -8,16 +8,15 @@
         this.newsfeed = 'asf';
         $scope.model = this;
         this.getPosts();
-        //this.signalRFactory.initialize(this.broadcastMessage);
-        //this.joinGroupFactory.initialize();
     }
     NewsFeedCtrl.prototype.getPosts = function () {
-        this.postsService.getPosts();
-        //        ajax.done(() => {
-        //            alert('posts received');
-        //        }).error(() => {
-        //            alert('posts error');
-        //        });
+        var _this = this;
+        var received = this.postsService.getPosts();
+        received.success(function (data) {
+            _this.posts = data;
+        }).error(function (data, status, headers, config) {
+            alert('failure');
+        });
     };
 
     NewsFeedCtrl.prototype.createPost = function () {
@@ -28,7 +27,6 @@
         };
 
         this.postsService.createPost(post);
-        //this.signalRFactory.sendRequest();
     };
 
     NewsFeedCtrl.prototype.likeEvent = function () {
@@ -45,4 +43,3 @@
     NewsFeedCtrl.$inject = ['$scope', 'PostsService', 'SignalRFactory', 'CommentService', 'JoinGroupFactory'];
     return NewsFeedCtrl;
 })();
-//# sourceMappingURL=NewsFeedCtrl.js.map

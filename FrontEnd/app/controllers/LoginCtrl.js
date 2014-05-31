@@ -18,4 +18,3 @@
 })();
 
 App.app.controller('LoginCtrl', LoginCtrl);
-//# sourceMappingURL=LoginCtrl.js.map
