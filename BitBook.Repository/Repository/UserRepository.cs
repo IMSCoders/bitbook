@@ -54,15 +54,9 @@ namespace BitBook.Repository.Repository
             throw new NotImplementedException();
         }
 
-        public override User GetById(ObjectId id)
+        public override User GetById(string id)
         {
             var query = Query<User>.EQ(e => e.Id, id.ToString());
-            return Collection.Find(query).First();
-        }
-
-        public User GetById(string id)
-        {
-            var query = Query<User>.EQ(e => e.Id, id);
             return Collection.Find(query).First();
         }
 
