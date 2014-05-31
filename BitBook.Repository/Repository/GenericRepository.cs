@@ -39,7 +39,7 @@ namespace BitBook.Repository.Repository
 
         public abstract void Delete(ObjectId id);
 
-        public abstract T GetById(ObjectId id);
+        public abstract T GetById(string id);
 
     }
 }

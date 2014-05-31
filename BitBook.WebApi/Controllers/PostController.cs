@@ -21,6 +21,7 @@ using MongoDB.AspNet.Identity;
 using System.Web.Http.Cors;
 using System.Configuration;
 using MongoDB.Bson;
+using BitBook.WebApi.HubClient;
 namespace BitBook.WebApi.Controllers
 {
     [Authorize]
@@ -30,7 +31,7 @@ namespace BitBook.WebApi.Controllers
     {
         private const string LocalLoginProvider = "Local";
 
-        private IPostRepository _postRepository;
+        public IRepository<Post> _postRepository;
 
         public PostController()
         {
@@ -51,12 +52,12 @@ namespace BitBook.WebApi.Controllers
             var post = new Post()
             {
                 Description = model.Description,
-                PostedBy = new MongoDB.Bson.ObjectId(model.PostedBy),
+                PostedBy = model.PostedBy,
                 PostedTime = DateTime.Now
             };
 
           _postRepository.Add(post);
-           return Ok(post.Id);
+           return Ok(post.Id.ToString());
             
         }
 
@@ -70,11 +71,14 @@ namespace BitBook.WebApi.Controllers
             {
                 return BadRequest(ModelState);
             }
-            var post = _postRepository.GetById(new ObjectId(id));
+            var post = _postRepository.GetById(id);
+
+            var hubClient = BitBookHubClient.ReturnInstance();
+//            hubClient.SendNewPostToHome(post.)
 
             return Ok(post);
             
-
+            
         }
     }
 }

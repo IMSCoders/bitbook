@@ -7,7 +7,6 @@ namespace BitBook.Repository.Interfaces
     {
         User GetByName(string nameOrPartOfName);
         User GetByEmail(string mailAddress);
-        User GetById(string id);
         IEnumerable<User> GetAllSafely();
         IEnumerable<User> GetUsersByName(string nameOrPartOfName);
         IEnumerable<string> GetCommonFriends(User userOne, User userTwo);

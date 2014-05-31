@@ -7,7 +7,7 @@ namespace BitBook.Repository.Interfaces
     {
         void Add(TEntity entity);
         void Delete(ObjectId id);
-        TEntity GetById(ObjectId id);
+        TEntity GetById(string id);
         void Update(TEntity entity);
         IEnumerable<TEntity> GetAll();
         void Save();
