@@ -73,7 +73,7 @@ namespace BitBook.WebApi.Controllers
             }
             var post = _postRepository.GetById(id);
 
-            var hubClient = BitBookHubClient.ReturnInstance();
+           // var hubClient = BitBookHubClient.ReturnInstance();
 //            hubClient.SendNewPostToHome(post.)
 
             return Ok(post);
@@ -81,5 +81,12 @@ namespace BitBook.WebApi.Controllers
             
         }
 
+        [Route("GetAllPosts")]
+        [AllowAnonymous]
+        public IHttpActionResult GetAllposts()
+        {
+            var posts = _postRepository.GetAll();
+            return Ok(posts);
+        }
     }
 }
