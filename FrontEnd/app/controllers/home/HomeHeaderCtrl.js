@@ -2,8 +2,10 @@
     function HomeHeaderCtrl($scope, searchService) {
         this.$scope = $scope;
         this.searchService = searchService;
+        this.headervar = 'asd';
     }
-    HomeHeaderCtrl.prototype.searchPeople = function () {
+    HomeHeaderCtrl.prototype.searchUser = function () {
+        alert('user');
         this.searchService.searchPeople(this.$scope.name);
     };
     HomeHeaderCtrl.$inject = ['$scope', 'SearchServices'];

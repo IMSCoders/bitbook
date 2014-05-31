@@ -7,7 +7,7 @@
         <div class="nav">
             <ul class="nav navbar-nav col-md-10">
                 <li class="col-md-6">
-                    <form class="navbar-form navbar-left" role="search">
+                    <form name="searchForm" class="navbar-form navbar-left" role="search" ng-submit="model.searchUser(searchForm.$valid)">
                         <div class="form-group">
                             <input type="text" class="form-control" placeholder="Search">
                         </div>

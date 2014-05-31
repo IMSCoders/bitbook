@@ -2,7 +2,7 @@
 
     posts:IPost[];
     static $inject: string[] = ['$scope', 'PostsService', 'SignalRFactory','CommentService', 'JoinGroupFactory'];
-
+    newsfeed = 'asf';
     constructor(
         private $scope, private postsService: PostsService, private signalRFactory: SignalRFactory,
         private commentService: CommentService, private joinGroupFactory: JoinGroupFactory) {

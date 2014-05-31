@@ -2,13 +2,15 @@
     name:string;
 }
 class HomeHeaderCtrl {
+
+    headervar = 'asd';
     static $inject: string[] = ['$scope', 'SearchServices'];
     constructor(private $scope : IHeaderScope, private searchService:SearchService) {
         
     }
 
-    searchPeople() {
-
+    searchUser() {
+        alert('user');
         this.searchService.searchPeople(this.$scope.name);
     }
 }
