@@ -57,13 +57,19 @@ namespace BitBook.Repository.Repository
         public override User GetById(string id)
         {
             var query = Query<User>.EQ(e => e.Id, id.ToString());
-            return Collection.Find(query).First();
+            return InitializeLists(Collection.Find(query).First());
         }
 
         private User InitializeLists(User user)
         {
             if (user.Friends == null) user.Friends = new List<string>();
+            if (user.Requests == null) user.Requests = new List<string>();
             return user;
+        }
+
+        public void AddFriend(User userOne, User userTwo)
+        {
+            userOne.Requests.Add(userTwo.Id);
         }
 
     }
