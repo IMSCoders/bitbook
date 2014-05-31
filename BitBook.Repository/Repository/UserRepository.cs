@@ -18,19 +18,35 @@ namespace BitBook.Repository.Repository
         public User GetByName(string nameOrPartOfName)
         {
             var query = Query<User>.Matches(e => e.UserName, new BsonRegularExpression(nameOrPartOfName));
-            return Collection.Find(query).First();
+            return InitializeLists(Collection.Find(query).FirstOrDefault());
         }
 
-        public List<User> GetUsersByName(string nameOrPartOfName)
+        public IEnumerable<User> GetAllSafely()
+        {
+            return GetAll().Select(InitializeLists);
+        }
+
+        public IEnumerable<User> GetUsersByName(string nameOrPartOfName)
         {
             var query = Query<User>.Matches(e => e.UserName, new BsonRegularExpression(nameOrPartOfName));
-            return Collection.Find(query).ToList();
+            return Collection.Find(query).ToList().Select(InitializeLists);
         }
 
         public User GetByEmail(string mailAddress)
         {
             var query = Query<User>.EQ(e => e.Email, mailAddress);
-            return Collection.Find(query).First();
+            return InitializeLists(Collection.Find(query).First());
+        }
+
+        public IEnumerable<string> GetCommonFriends(User userOne, User userTwo)
+        {
+            var commonFriendIds = userOne.Friends.Intersect(userTwo.Friends);
+
+            foreach (var friendId in commonFriendIds)
+            {
+                var query = Query<User>.EQ(e => e.Id, friendId);
+                yield return Collection.FindOne(query).UserName;
+            }
         }
 
         public override void Delete(ObjectId id)
@@ -42,6 +58,18 @@ namespace BitBook.Repository.Repository
         {
             var query = Query<User>.EQ(e => e.Id, id.ToString());
             return Collection.Find(query).First();
+        }
+
+        public User GetById(string id)
+        {
+            var query = Query<User>.EQ(e => e.Id, id);
+            return Collection.Find(query).First();
+        }
+
+        private User InitializeLists(User user)
+        {
+            if (user.Friends == null) user.Friends = new List<string>();
+            return user;
         }
 
     }

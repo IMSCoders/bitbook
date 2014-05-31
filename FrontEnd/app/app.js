@@ -2,6 +2,8 @@
 (function (App) {
     App.app = angular.module('app', ['ui.router', 'ui.bootstrap']);
     App.webApiURLForAccountRegister = 'http://localhost:14170/api/Account/Register';
+    App.webApiURLForPostStatus = 'http://localhost:14170/api/Post/PostStatus';
+
     var appViewPath = 'app/views/';
     App.app.value('$', $);
     App.app.config([
