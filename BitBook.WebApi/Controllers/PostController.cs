@@ -42,7 +42,7 @@ namespace BitBook.WebApi.Controllers
         //[HostAuthentication(DefaultAuthenticationTypes.ExternalCookie)]
         [AllowAnonymous]
         [Route("PostStatus")]
-        public async Task<IHttpActionResult> PostStatus(PostStatusBindingModel model)
+        public IHttpActionResult PostStatus(PostStatusBindingModel model)
         {
             if (!ModelState.IsValid)
             {
@@ -57,7 +57,7 @@ namespace BitBook.WebApi.Controllers
             };
 
           _postRepository.Add(post);
-           return Ok(post.Id.ToString());
+           return Ok();
             
         }
 
@@ -73,7 +73,7 @@ namespace BitBook.WebApi.Controllers
             }
             var post = _postRepository.GetById(id);
 
-           // var hubClient = BitBookHubClient.ReturnInstance();
+            //var hubClient = BitBookHubClient.ReturnInstance();
 //            hubClient.SendNewPostToHome(post.)
 
             return Ok(post);

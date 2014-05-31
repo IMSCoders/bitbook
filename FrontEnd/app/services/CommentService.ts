@@ -9,3 +9,6 @@ class CommentService {
         
     }
 }
+    
+App.app.service("CommentService", CommentService);
+

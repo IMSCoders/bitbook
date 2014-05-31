@@ -1,12 +1,16 @@
 ﻿class NewsFeedCtrl {
 
     posts:IPost[];
-    static $inject: string[] = ['$scope', 'PostsService', 'SignalRFactory'];
+    static $inject: string[] = ['$scope', 'PostsService', 'SignalRFactory','CommentService', 'JoinGroupFactory'];
 
-    constructor(private $scope, private postsService: PostsService, private signalRFactory:SignalRFactory, private commentService:CommentService) {
+    constructor(
+        private $scope, private postsService: PostsService, private signalRFactory: SignalRFactory,
+        private commentService: CommentService, private joinGroupFactory: JoinGroupFactory) {
         $scope.model = this;
         this.getPosts();
-        this.signalRFactory.initialize(this.broadcastMessage);
+        //this.signalRFactory.initialize(this.broadcastMessage);
+        //this.joinGroupFactory.initialize();
+        
     }
 
     getPosts() {
@@ -21,7 +25,7 @@
         }
 
         this.postsService.createPost(post);
-        this.signalRFactory.sendRequest();
+        //this.signalRFactory.sendRequest();
     }
 
     likeEvent() {
