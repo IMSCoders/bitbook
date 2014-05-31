@@ -26,8 +26,10 @@ class PostsService {
 
     createPost(post:IPost) {
         console.log(post);
-        this.$http.post(App.webApiURLForPostStatus, post).success().error(function (data, status, headers, config) {
-
+        this.$http.post(App.webApiURLForPostStatus, post).success(() => {
+            alert('in success');
+        }).error(function (data, status, headers, config) {
+            alert('in error');
             // called asynchronously if an error occurs
             // or server returns response with an error status.
         });

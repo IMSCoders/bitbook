@@ -7,8 +7,8 @@
         this.joinGroupFactory = joinGroupFactory;
         $scope.model = this;
         this.getPosts();
-        this.signalRFactory.initialize(this.broadcastMessage);
-        this.joinGroupFactory.initialize();
+        //this.signalRFactory.initialize(this.broadcastMessage);
+        //this.joinGroupFactory.initialize();
     }
     NewsFeedCtrl.prototype.getPosts = function () {
         this.posts = this.$scope.posts = this.postsService.getPosts();
@@ -22,7 +22,7 @@
         };
 
         this.postsService.createPost(post);
-        this.signalRFactory.sendRequest();
+        //this.signalRFactory.sendRequest();
     };
 
     NewsFeedCtrl.prototype.likeEvent = function () {

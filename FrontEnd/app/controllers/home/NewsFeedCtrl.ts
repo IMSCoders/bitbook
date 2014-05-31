@@ -8,8 +8,8 @@
         private commentService: CommentService, private joinGroupFactory: JoinGroupFactory) {
         $scope.model = this;
         this.getPosts();
-        this.signalRFactory.initialize(this.broadcastMessage);
-        this.joinGroupFactory.initialize();
+        //this.signalRFactory.initialize(this.broadcastMessage);
+        //this.joinGroupFactory.initialize();
         
     }
 
@@ -25,7 +25,7 @@
         }
 
         this.postsService.createPost(post);
-        this.signalRFactory.sendRequest();
+        //this.signalRFactory.sendRequest();
     }
 
     likeEvent() {

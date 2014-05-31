@@ -7,13 +7,13 @@
     }
 
     initialize() {
-        this.connection = $.hubConnection('http://localhost:5316/signalr/hubs');
-        this.proxy = this.connection.createHubProxy('BitBookHub');
-        var root = this;
-        this.connection.start().done(() => {
+        //this.connection = $.hubConnection('http://localhost:5316/signalr/hubs');
+        //this.proxy = this.connection.createHubProxy('BitBookHub');
+        //var root = this;
+        //this.connection.start().done(() => {
             
-            root.sendRequest();
-        });
+        //    root.sendRequest();
+        //});
 
         //this.proxy.on('broadcastMessage', (name, message) => {
         //    this.$rootScope.$apply(() => {
@@ -25,13 +25,13 @@
     }
 
     addNote(name, message) {
-        this.proxy.invoke('join');
+        //this.proxy.invoke('join');
     }
     sendRequest() {
 
-        this.proxy.invoke('joinGroupByOwnName', 'amit').done(() => {
-            alert('in join group by own name');
-        });
+        //this.proxy.invoke('joinGroupByOwnName', 'amit').done(() => {
+        //    alert('in join group by own name');
+        //});
 
     }
 }
