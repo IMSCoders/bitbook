@@ -7,7 +7,7 @@
         private $scope, private postsService: PostsService, private signalRFactory: SignalRFactory,
         private commentService: CommentService, private joinGroupFactory: JoinGroupFactory) {
         $scope.model = this;
-        this.getPosts();
+        //this.getPosts();
         //this.signalRFactory.initialize(this.broadcastMessage);
         //this.joinGroupFactory.initialize();
         

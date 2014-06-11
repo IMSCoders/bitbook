@@ -1,0 +1,16 @@
+﻿<div class="panel panel-default" id="status-panel">
+    <div class="panel-heading">
+        <span>
+            <a href=""><i class="glyphicon glyphicon-pencil"></i>Status</a>
+            <a href=""><i class="glyphicon glyphicon-picture"></i>Photo</a>
+        </span>
+    </div>
+    <form name="statusForm" ng-submit="model.statusUpdate(statusForm.$valid)">
+        <div class="panel-body">
+            <textarea class="form-control" placeholder="What is on your mind?"></textarea>
+        </div>
+        <div class="panel-footer">
+            <input class="btn" type="submit" value="Post" ng-disabled="statusForm.$invalid" />
+        </div>
+    </form>
+</div>

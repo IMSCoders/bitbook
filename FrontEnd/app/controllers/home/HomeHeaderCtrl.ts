@@ -1,17 +1,17 @@
 ﻿interface IHeaderScope extends ng.IScope {
     name:string;
+    model: HomeHeaderCtrl
 }
 class HomeHeaderCtrl {
 
-    headervar = 'asd';
-    static $inject: string[] = ['$scope', 'SearchServices'];
-    constructor(private $scope : IHeaderScope, private searchService:SearchService) {
-        
-    }
+    messages = ['msg a', 'msg b', 'msg c', 'msg  e'];
+    friendrequests = ['friend a', 'friend b', 'friend d'];
+    notifications = ['noti a', 'noti b', 'noti c'];
 
-    searchUser() {
-        alert('user');
-        this.searchService.searchPeople(this.$scope.name);
+    static $inject: string[] = ['$scope'];
+    constructor(private $scope : IHeaderScope) {
+        $scope.model = this;
+        
     }
 }
 

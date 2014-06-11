@@ -1,14 +1,12 @@
 ﻿var HomeHeaderCtrl = (function () {
-    function HomeHeaderCtrl($scope, searchService) {
+    function HomeHeaderCtrl($scope) {
         this.$scope = $scope;
-        this.searchService = searchService;
-        this.headervar = 'asd';
+        this.messages = ['msg a', 'msg b', 'msg c', 'msg  e'];
+        this.friendrequests = ['friend a', 'friend b', 'friend d'];
+        this.notifications = ['noti a', 'noti b', 'noti c'];
+        $scope.model = this;
     }
-    HomeHeaderCtrl.prototype.searchUser = function () {
-        alert('user');
-        this.searchService.searchPeople(this.$scope.name);
-    };
-    HomeHeaderCtrl.$inject = ['$scope', 'SearchServices'];
+    HomeHeaderCtrl.$inject = ['$scope'];
     return HomeHeaderCtrl;
 })();
 

@@ -1,5 +1,5 @@
 ﻿module App {
-    export var app = angular.module('app', ['ui.router', 'ui.bootstrap']);
+    export var app = angular.module('app', ['ui.router', 'ui.bootstrap','mgcrea.ngStrap']);
     export var webApiUrl = 'http://localhost:14170/api/';
     //export var webApiURLForPostStatus = 'http://localhost:14170/api/Post/PostStatus';
 
@@ -8,35 +8,36 @@
     app.config([
         '$stateProvider', '$urlRouterProvider', ($stateProvider, $urlRouterProvider) => {
 
-            $urlRouterProvider.otherwise('/home');
+            $urlRouterProvider.otherwise('launchpad');
             $stateProvider
-                .state('home', {
-                    url: '/home',
+                .state('default', {
+                    url: '/',
+                    templateUrl: appViewPath + 'home/home-header.html',
+                    controller:HomeHeaderCtrl
+                })
+                .state('default.home', {
+                    url: 'home',
                     views: {
                         '': {
                             templateUrl: appViewPath + 'home/home.html',
                         },
-                        'header@home': {
-                            templateUrl: appViewPath + 'home/home-header.html',
-                            //controller:HomeHeaderCtrl
-                        },
-                        'feed@home': {
+                        'feed@default.home': {
                             templateUrl: appViewPath + 'home/home-newsfeed.html',
                             controller: NewsFeedCtrl
                         },
-                        'ticker@home': {
+                        'ticker@default.home': {
                             //templateUrl: appViewPath + 'home/home-ticker.html',
                             controller: HomeTickerCtrl
                         }
                     }
                 })
-                .state('profile', {
-                    url: '/profile',
+                .state('default.profile', {
+                    url: 'profile',
                     views: {
                         '': {
                             templateUrl: appViewPath + '/profile/profile.html'
                         },
-                        'info@profile': {
+                        'info@default.profile': {
                             templateUrl: appViewPath + '/profile/profile-info.html',
                             controller: ProfileInfoCtrl,
                             resolve: {
@@ -51,18 +52,19 @@
                                 }
                             }
                         },
-                        'userposts@profile': {
+                        'userposts@default.profile': {
                             templateUrl: appViewPath + 'profile/profile-posts.html',
                             controller: ProfilePostsCtrl
                         },
-                        'friends@profile': {
+                        'friends@default.profile': {
                             templateUrl: appViewPath + 'profile/profile-friends.html',
                             controller: ProfileFriendsCtrl
                         }
                     }
                 })
                 .state('launchpad', {
-                    url: '/',
+                    url: '/launchpad',
+                    allowAnonymous: true,
                     views: {
                         '': {
                             templateUrl: appViewPath + 'launchpad/launchpad.html'
@@ -77,6 +79,19 @@
                         }
                     }
                 });
+        }
+    ]);
+
+    app.run([
+        '$rootScope', '$state', 'AuthService',
+        ($rootScope, $state, authService: AuthService) => {
+            var auth = authService.isAuthenticated();
+            $rootScope.$on('$stateChangeStart', (event, toState, toParams, fromState, fromParams) => {
+                if (!toState.allowAnonymous && !auth) {
+                    $state.go('launchpad');
+                    event.preventDefault();
+                }
+            });
         }
     ]);
 

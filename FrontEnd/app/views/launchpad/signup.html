@@ -1,26 +1,42 @@
-<div>
+<div class="form-container well">
+    <h2>Get started with bitbook</h2>
     <form name="signupForm" ng-submit="model.signup(signupForm.$valid)">
-        <p>
+        <div>
             <label for="username">Username:</label>
             <input type="text" id="username" ng-model="newuser.username" required ng-minlength="3" />
-        </p>
+        </div>
         <p ng-show="signupForm.username.$invalid && ! signupForm.username.$pristine" class="help-block">You name is required.</p>
-        <p>
+        <div>
             <label for="email">Email:</label>
             <input type="email" id="email" ng-model="newuser.email" required />
-        </p>
+        </div>
         <p ng-show="signupForm.email.$invalid && ! signupForm.email.$pristine" class="help-block">You email address is required.</p>
-        <p>
-            <label for="password" >Password: </label><input ng-model="newuser.password" type="password" name="password" data-ng-class="{'ng-invalid':signup.confirmPassword.$error.match}" required/>     
-        </p>
-        <p>
-            <label for="confirmPassword">Confirm Password</label> <input ng-model="newuser.passwordConfirm" type="password" data-match="newuser.password" name="confirmPassword" required />
-        </p> 
+        <div>
+            <label for="password">Password: </label>
+            <input ng-model="newuser.password" type="password" name="password" data-ng-class="{'ng-invalid':signup.confirmPassword.$error.match}" required />
+        </div>
+        <div>
+            <label for="confirmPassword">Confirm Password</label>
+            <input ng-model="newuser.passwordConfirm" type="password" data-match="newuser.password" name="confirmPassword" required />
+        </div>
         <div data-ng-show="signupForm.confirmPassword.$error.match">Passwords do not match!</div>
-        <p>
-            <button class="btn btn-primary" type="submit" ng-disabled="signupForm.$invalid">Sign up</button>
-        </p>
-
+        <div>
+            <label>Birthday</label>
+            <span>
+                <select ng-required ng-model="birthday.month" ng-options="months for months in model.months">
+                    <option value="" selected>--Month--</option>
+                </select>
+                <select ng-required ng-model="birthday.day" ng-options="day for day in model.day">
+                    <option value="" selected>--Day--</option>
+                </select>
+                <select ng-required ng-model="birthday.year" ng-options="year for year in model.year">
+                    <option value="" selected>--Year--</option>
+                </select>
+            </span>
+        </div>
+        <div>
+            <input class="btn btn-success " type="submit" ng-disabled="signupForm.$invalid" value="Signup">
+        </div>
     </form>
 </div>
 

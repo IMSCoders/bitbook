@@ -20,6 +20,9 @@
     <Content Include="app.css" />
     <Content Include="app\directives\all-friends.html" />
     <Content Include="app\directives\all-posts.html" />
+    <Content Include="app\directives\header\messages\messagesDropdownTemplate.html" />
+    <Content Include="app\directives\header\friendRequests\friendRequestsDropdownTemplate.html" />
+    <Content Include="app\directives\header\notifications\notificationsDropdownTemplate.html" />
     <Content Include="app\views\home\home-newsfeed.html" />
     <Content Include="app\views\home\home-header.html" />
     <Content Include="app\views\home\home.html" />
@@ -30,12 +33,22 @@
     <Content Include="app\views\profile\profile-info.html" />
     <Content Include="app\views\profile\profile-posts.html" />
     <Content Include="app\views\profile\profile.html" />
+    <Content Include="app\views\user\status-form.html" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\style\app.css">
+      <DependentUpon>app.less</DependentUpon>
+    </Content>
     <Content Include="Content\style\header.css">
       <DependentUpon>header.less</DependentUpon>
+    </Content>
+    <Content Include="Content\style\profile\profile.css">
+      <DependentUpon>profile.less</DependentUpon>
+    </Content>
+    <Content Include="Content\style\signup.css">
+      <DependentUpon>signup.less</DependentUpon>
     </Content>
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="index.html" />
@@ -314,6 +327,18 @@
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\style\signup.less" />
+    <Content Include="Content\style\signup.css.map">
+      <DependentUpon>signup.css</DependentUpon>
+    </Content>
+    <Content Include="Content\style\profile\profile.less" />
+    <Content Include="Content\style\profile\profile.css.map">
+      <DependentUpon>profile.css</DependentUpon>
+    </Content>
+    <Content Include="Content\style\app.less" />
+    <Content Include="Content\style\app.css.map">
+      <DependentUpon>app.css</DependentUpon>
+    </Content>
     <Content Include="Content\style\header.less" />
     <Content Include="Content\style\header.css.map">
       <DependentUpon>header.css</DependentUpon>
@@ -341,6 +366,7 @@
     <TypeScriptCompile Include="app\controllers\profile\ProfilePostsCtrl.ts" />
     <TypeScriptCompile Include="app\controllers\SignupCtrl.ts" />
     <TypeScriptCompile Include="app\directives\allFriendsDirective.ts" />
+    <TypeScriptCompile Include="app\directives\header\headerDropdownDirectives.ts" />
     <TypeScriptCompile Include="app\directives\showAllPostsDirective.ts" />
     <TypeScriptCompile Include="app\factories\JoinGroupFactory.ts" />
     <TypeScriptCompile Include="app\factories\SignalRFactory.ts" />
@@ -384,9 +410,7 @@
       <DependentUpon>web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="app\views\user\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Reference Include="Microsoft.AspNet.SignalR.Core">
       <HintPath>..\packages\Microsoft.AspNet.SignalR.Core.2.0.3\lib\net45\Microsoft.AspNet.SignalR.Core.dll</HintPath>

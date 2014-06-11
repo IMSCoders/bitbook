@@ -1,0 +1,35 @@
+body .form-container {
+  padding: 3%;
+}
+body .form-container form div {
+  margin: 0 0 15px 0;
+  border: none;
+  text-align: right;
+}
+body .form-container form div label {
+  display: inline-block;
+  width: 25%;
+  text-align: right;
+  margin: 10px;
+}
+body .form-container form div input[type=submit] {
+  font-size: 1em;
+  border-radius: 8px;
+  padding: 10px;
+  border: 1px solid #59B969;
+  box-shadow: 0 1px 0 0 #60BD49 inset;
+}
+body .form-container form div input[type=text],
+body .form-container form div input[type=password],
+body .form-container form div input[type=email] {
+  width: 65%;
+  font-family: "Lucida Grande", "Lucida Sans Unicode", Tahoma, Sans-Serif;
+  padding: 5px;
+  font-size: 0.9em;
+  border-radius: 5px;
+  background: rgba(0, 0, 0, 0.07);
+}
+body .form-container form div span select {
+  width: 21%;
+}
+/*# sourceMappingURL=signup.css.map */

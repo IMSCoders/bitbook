@@ -15,6 +15,10 @@ class AuthService {
             }); 
     }
 
+    isAuthenticated() {
+        return true;
+    }
+
     signup(user: IUser) {
         this.$http.post(App.webApiUrl+'Account/Register', user).success(() => {
             alert('success msg');

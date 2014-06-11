@@ -1,14 +1,17 @@
-<div>
+<div class="well form-container">
+    <h2>Login</h2>
     <form name="loginForm" ng-submit="model.login(loginForm.$valid)">
-        <p>
+        <div>
             <label for="username">Username:</label>
             <input type="text" id="username" ng-model="user.username" required ng-minlength="3" />
-        </p>
+        </div>
         <p ng-show="loginForm.username.$invalid && ! loginForm.username.$pristine" class="help-block">You name is required.</p>
-        <p>
+        <div>
             <label for="password">Password:</label>
             <input type="password" id="password" ng-model="user.password" required />
-        </p>
-        <button class="btn btn-primary" type="submit" ng-disabled="loginForm.$invalid">Login</button>
+        </div>
+        <div>
+            <input class="btn btn-success" type="submit" ng-disabled="loginForm.$invalid" value="Login" />
+        </div>
     </form>
 </div>

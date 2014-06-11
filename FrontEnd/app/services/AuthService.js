@@ -12,6 +12,10 @@ var AuthService = (function () {
         });
     };
 
+    AuthService.prototype.isAuthenticated = function () {
+        return true;
+    };
+
     AuthService.prototype.signup = function (user) {
         this.$http.post(App.webApiUrl + 'Account/Register', user).success(function () {
             alert('success msg');

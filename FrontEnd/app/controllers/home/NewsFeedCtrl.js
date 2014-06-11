@@ -7,7 +7,7 @@
         this.joinGroupFactory = joinGroupFactory;
         this.newsfeed = 'asf';
         $scope.model = this;
-        this.getPosts();
+        //this.getPosts();
         //this.signalRFactory.initialize(this.broadcastMessage);
         //this.joinGroupFactory.initialize();
     }

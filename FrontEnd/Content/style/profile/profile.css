@@ -1,0 +1,20 @@
+﻿body .profile-navbar {
+  /*margin:0 10%;*/
+}
+body #status-panel {
+  border-radius: 10px;
+}
+body #status-panel .panel-heading span i {
+  margin: 0 3%;
+}
+body #status-panel form .panel-body {
+  padding: 0;
+}
+body #status-panel form .panel-body textarea {
+  border-radius: 0;
+  border-width: 0;
+}
+body #status-panel form .panel-footer {
+  text-align: right;
+}
+/*# sourceMappingURL=profile.css.map */

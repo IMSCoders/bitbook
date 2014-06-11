@@ -1,24 +1,64 @@
-﻿<div class="row">
-    <nav class="navbar navbar-inverse" role="navigation">
-        <div class="navbar-header col-md-2">
-            <a class="navbar-brand" ui-sref="#">BitBook</a>
-        </div>
-
-        <div class="nav">
-            <ul class="nav navbar-nav col-md-10">
-                <li class="col-md-6">
-                    <form name="searchForm" class="navbar-form navbar-left" role="search" ng-submit="model.searchUser(searchForm.$valid)">
-                        <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Search">
+﻿<nav class="navbar navbar-inverse" id="main-navigation" role="navigation">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="col-md-1">
+                <a class="navbar-brand" ui-sref="#">BitBook</a>
+            </div>
+            <div class="nav navbar-nav col-md-11">
+                <div class="col-md-7">
+                    <form name="searchForm" class="navbar-left form-inline col-md-12" role="search" ng-submit="model.searchUser(searchForm.$valid)">
+                        <div>
+                            <div class="input-group">
+                                <input type="text" class="form-control" placeholder="Search">
+                                <div class="input-group-btn">
+                                    <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
+                                </div>
+                            </div>
                         </div>
-                        <button type="submit" class="btn btn-default">Submit</button>
                     </form>
-                </li>
-                <li class="col-md-1"><a ui-sref="profile">Profile</a></li>
-                <li class="col-md-1"><a ui-sref="home">Home</a></li>
-                <li class="col-md-1"><button>Messages</button></li>
-                <li class="col-md-1"><button>Notifications</button></li>
-            </ul>
+                </div>
+
+                <div class="col-md-1"><a class="btn btn-default" ui-sref=".profile">Profile</a></div>
+                <div class="col-md-1"><a class="btn btn-default" ui-sref=".home"><span class="glyphicon glyphicon-home">Home</span></a></div>
+                <div class="col-md-1 dropdown" on-toggle="toggled(open)">
+                    <button class="btn btn-default dropdown-toggle">
+                        <span class='glyphicon glyphicon-bell'></span>
+                        <span class="badge">42</span>
+                    </button>
+                    <div class="dropdown-menu pull-right">
+                        <div class="header-dropdown-container" header-notifications-dropdown-directive notifications="model.notifications"></div>
+                    </div>
+                </div>
+                <div class="col-md-1 dropdown" on-toggle="toggled(open)">
+                    <button class="btn btn-default dropdown-toggle">
+                        <span class="glyphicon glyphicon-comment"></span>
+                        <span class="badge">42</span>
+                    </button>
+                    <div class="dropdown-menu pull-right">
+                        <div class="header-dropdown-container" header-messages-dropdown-directive messages="model.messages"></div>
+                    </div>
+                </div>
+                <div class="col-md-1 dropdown" on-toggle="toggled(open)">
+                    <button class="btn btn-default dropdown-toggle">
+                        <span class="glyphicon glyphicon-user"></span>
+                        <span class="badge">42</span>
+                    </button>
+                    <div class="dropdown-menu pull-right">
+                        <div class="header-dropdown-container" header-friendrequests-dropdown-directive friendrequests="model.friendrequests"></div>
+                    </div>
+                </div>
+
+            </div>
         </div>
-    </nav>
-</div>
+    </div>
+</nav>
+
+<!--$1$ You can also use data-attrs to assign scope variables #1#-->
+<!--<button type="button" class="btn btn-lg btn-primary" data-placement="top-right" title="this is title" data-content="{{popover.content}}" data-trigger="focus" bs-popover>-->
+<!--    Click to toggle popover-->
+<!--    <br>-->
+<!--    <small>(using data-attrs)</small>-->
+<!--</button>-->
+
+<div ui-view></div>
+

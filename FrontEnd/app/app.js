@@ -1,6 +1,6 @@
 ﻿var App;
 (function (App) {
-    App.app = angular.module('app', ['ui.router', 'ui.bootstrap']);
+    App.app = angular.module('app', ['ui.router', 'ui.bootstrap', 'mgcrea.ngStrap']);
     App.webApiUrl = 'http://localhost:14170/api/';
 
     //export var webApiURLForPostStatus = 'http://localhost:14170/api/Post/PostStatus';
@@ -8,32 +8,33 @@
     App.app.value('$', $);
     App.app.config([
         '$stateProvider', '$urlRouterProvider', function ($stateProvider, $urlRouterProvider) {
-            $urlRouterProvider.otherwise('/home');
-            $stateProvider.state('home', {
-                url: '/home',
+            $urlRouterProvider.otherwise('launchpad');
+            $stateProvider.state('default', {
+                url: '/',
+                templateUrl: appViewPath + 'home/home-header.html',
+                controller: HomeHeaderCtrl
+            }).state('default.home', {
+                url: 'home',
                 views: {
                     '': {
                         templateUrl: appViewPath + 'home/home.html'
                     },
-                    'header@home': {
-                        templateUrl: appViewPath + 'home/home-header.html'
-                    },
-                    'feed@home': {
+                    'feed@default.home': {
                         templateUrl: appViewPath + 'home/home-newsfeed.html',
                         controller: NewsFeedCtrl
                     },
-                    'ticker@home': {
+                    'ticker@default.home': {
                         //templateUrl: appViewPath + 'home/home-ticker.html',
                         controller: HomeTickerCtrl
                     }
                 }
-            }).state('profile', {
-                url: '/profile',
+            }).state('default.profile', {
+                url: 'profile',
                 views: {
                     '': {
                         templateUrl: appViewPath + '/profile/profile.html'
                     },
-                    'info@profile': {
+                    'info@default.profile': {
                         templateUrl: appViewPath + '/profile/profile-info.html',
                         controller: ProfileInfoCtrl,
                         resolve: {
@@ -49,17 +50,18 @@
                             }
                         }
                     },
-                    'userposts@profile': {
+                    'userposts@default.profile': {
                         templateUrl: appViewPath + 'profile/profile-posts.html',
                         controller: ProfilePostsCtrl
                     },
-                    'friends@profile': {
+                    'friends@default.profile': {
                         templateUrl: appViewPath + 'profile/profile-friends.html',
                         controller: ProfileFriendsCtrl
                     }
                 }
             }).state('launchpad', {
-                url: '/',
+                url: '/launchpad',
+                allowAnonymous: true,
                 views: {
                     '': {
                         templateUrl: appViewPath + 'launchpad/launchpad.html'
@@ -72,6 +74,19 @@
                         templateUrl: appViewPath + 'launchpad/login.html',
                         controller: LoginCtrl
                     }
+                }
+            });
+        }
+    ]);
+
+    App.app.run([
+        '$rootScope', '$state', 'AuthService',
+        function ($rootScope, $state, authService) {
+            var auth = authService.isAuthenticated();
+            $rootScope.$on('$stateChangeStart', function (event, toState, toParams, fromState, fromParams) {
+                if (!toState.allowAnonymous && !auth) {
+                    $state.go('launchpad');
+                    event.preventDefault();
                 }
             });
         }

@@ -1,5 +1,32 @@
-﻿body {
-    .header-search{
-        background-color:blue;
+﻿/// <reference path="test1.less" />
+@import (reference) 'test1.less';
+@import (reference) '../bootstrap/mixins.less';
+@import (reference) '../bootstrap/utilities.less';
+
+
+
+body {
+
+    #main-navigation {
+        .col-md-1, form .input-group {
+            /*padding:15px 0;*/
+            padding-top: 15px;
+            padding-left: 0;
+            padding-right: 0;
+        }
+
+        .col-xs-1 {
+            padding: 20px 0;
+        }
+
+        #friendreq {
+            width: 600px;
+        }
+
+        .dropdown-menu {
+            .header-dropdown-container {
+                width: 600px;
+            }
+        }
     }
 }

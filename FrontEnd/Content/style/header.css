@@ -1,5 +1,17 @@
-﻿body .header-search {
-  background-color: blue;
-    width: 50%;
+﻿body #main-navigation .col-md-1,
+body #main-navigation form .input-group {
+  /*padding:15px 0;*/
+  padding-top: 15px;
+  padding-left: 0;
+  padding-right: 0;
+}
+body #main-navigation .col-xs-1 {
+  padding: 20px 0;
+}
+body #main-navigation #friendreq {
+  width: 600px;
+}
+body #main-navigation .dropdown-menu .header-dropdown-container {
+  width: 600px;
 }
 /*# sourceMappingURL=header.css.map */

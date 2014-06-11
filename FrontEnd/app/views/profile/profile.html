@@ -1,7 +1,14 @@
-﻿<div ng-include src="'app/views/home/home-header.html'">
-</div>
-    <div class="row">
-        <div class="col-sm-4" ui-view="info"></div>
-        <div class="col-sm-4" ui-view="userposts"></div>
-        <div class="col-sm-4" ui-view="friends"></div>
+﻿<nav class="navbar navbar-default" role="navigation">
+    <ul class="nav nav-tabs">
+        <li><a href="#">Timeline</a></li>
+        <li><a href="#">Friends</a></li>
+        <li><a href="#">Photos</a></li>
+    </ul>
+</nav>
+<div class="row">
+    <div class="col-md-4">
+        <div ui-view="info"></div>
+        <div ui-view="friends"></div>
     </div>
+    <div class="col-md-8" ui-view="userposts"></div>
+</div>

@@ -1,27 +1,17 @@
-﻿var PostsService = (function () {
+﻿/// <reference path="../references.ts" />
+var PostsService = (function () {
     function PostsService($http) {
         this.$http = $http;
     }
     PostsService.prototype.getPosts = function () {
-        var user = [];
-
-        //user[0] = {
-        //    description: "This is description",
-        //    id: 1,
-        //    postedTime: 'time',
-        //    postedBy: "Adib"
-        //}
-        //user[1] = {
-        //    description: "This is another description",
-        //    id: 2,
-        //    postedBy: "Amit",
-        //    postedTime: 'time'
-        //}
-        return user;
+        this.$http.get(App.webApiUrl + 'Post/GetAllPosts').success(function () {
+            alert('success');
+        }).error(function (data, status, headers, config) {
+            alert('failure');
+        });
     };
 
     PostsService.prototype.createPost = function (post) {
-        console.log(post);
         this.$http.post(App.webApiUrl + 'Post/PostStatus', post).success(function () {
             alert('in success');
         }).error(function (data, status, headers, config) {
