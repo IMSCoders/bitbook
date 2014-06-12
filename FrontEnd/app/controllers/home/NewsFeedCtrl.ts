@@ -14,7 +14,12 @@
     }
 
     getPosts() {
-        this.postsService.getPosts();
+        var received = this.postsService.getPosts();
+        received.success((data) => {
+            this.posts = data;
+        }).error((data, status, headers, config) => {
+                alert('failure');
+            });
 //        ajax.done(() => {
 //            alert('posts received');
 //        }).error(() => {

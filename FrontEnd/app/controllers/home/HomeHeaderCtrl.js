@@ -11,4 +11,3 @@
 })();
 
 App.app.controller("HomeHeaderCtrl", HomeHeaderCtrl);
-//# sourceMappingURL=HomeHeaderCtrl.js.map

@@ -9,4 +9,3 @@
 })();
 
 App.app.controller("ProfileInfoCtrl", ProfileInfoCtrl);
-//# sourceMappingURL=ProfileInfoCtrl.js.map

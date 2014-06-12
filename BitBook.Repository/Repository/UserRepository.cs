@@ -57,6 +57,7 @@ namespace BitBook.Repository.Repository
         public override User GetById(string id)
         {
             var query = Query<User>.EQ(e => e.Id, id.ToString());
+            if (Collection.Find(query).Count() == 0) return null;
             return InitializeLists(Collection.Find(query).First());
         }
 

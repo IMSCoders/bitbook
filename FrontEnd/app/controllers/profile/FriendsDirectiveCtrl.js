@@ -17,4 +17,3 @@
 })();
 
 App.app.controller("FriendsDirectiveCtrl", FriendsDirectiveCtrl);
-//# sourceMappingURL=FriendsDirectiveCtrl.js.map
