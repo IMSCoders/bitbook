@@ -1,14 +1,9 @@
 ﻿<nav class="navbar navbar-default" role="navigation">
     <ul class="nav nav-tabs">
-        <li><a href="#">Timeline</a></li>
-        <li><a href="#">Friends</a></li>
-        <li><a href="#">Photos</a></li>
+        <li><a ui-sref=".timeline">Timeline</a></li>
+        <li><a ui-sref=".friends">Friends</a></li>
+        <li><a ui-sref=".photos">Photos</a></li>
     </ul>
 </nav>
-<div class="row">
-    <div class="col-md-4">
-        <div ui-view="info"></div>
-        <div ui-view="friends"></div>
-    </div>
-    <div class="col-md-8" ui-view="userposts"></div>
-</div>
+
+<div ui-view></div>

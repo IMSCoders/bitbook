@@ -33,6 +33,7 @@
     <Content Include="app\views\profile\profile-info.html" />
     <Content Include="app\views\profile\profile-posts.html" />
     <Content Include="app\views\profile\profile.html" />
+    <Content Include="app\views\profile\timeline.html" />
     <Content Include="app\views\user\status-form.html" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
@@ -344,15 +345,14 @@
       <DependentUpon>header.css</DependentUpon>
     </Content>
     <None Include="localFrontEnd.pubxml" />
-    <None Include="Scripts\jquery-1.9.0.intellisense.js" />
-    <Content Include="Scripts\jquery-1.9.0.js" />
-    <Content Include="Scripts\jquery-1.9.0.min.js" />
+    <None Include="Scripts\jquery-2.1.1.intellisense.js" />
+    <Content Include="Scripts\jquery-2.1.1.js" />
+    <Content Include="Scripts\jquery-2.1.1.min.js" />
     <Content Include="Scripts\jquery.signalR-2.0.3.js" />
     <Content Include="Scripts\jquery.signalR-2.0.3.min.js" />
     <Content Include="web.config">
       <SubType>Designer</SubType>
     </Content>
-    <Content Include="Scripts\jquery-1.9.0.min.map" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="app\app.ts" />
@@ -403,6 +403,7 @@
     <Content Include="Scripts\angular-animate.min.js.map" />
     <Content Include="Scripts\angular.min.js.map" />
     <Content Include="packages.config" />
+    <Content Include="Scripts\jquery-2.1.1.min.map" />
     <None Include="web.Debug.config">
       <DependentUpon>web.config</DependentUpon>
     </None>

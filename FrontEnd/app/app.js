@@ -1,6 +1,6 @@
 ﻿var App;
 (function (App) {
-    App.app = angular.module('app', ['ui.router', 'ui.bootstrap', 'mgcrea.ngStrap']);
+    App.app = angular.module('app', ['ui.router', 'ui.bootstrap']);
     App.webApiUrl = 'http://localhost:14170/api/';
 
     //export var webApiURLForPostStatus = 'http://localhost:14170/api/Post/PostStatus';
@@ -32,10 +32,17 @@
                 url: 'profile',
                 views: {
                     '': {
-                        templateUrl: appViewPath + '/profile/profile.html'
+                        templateUrl: appViewPath + 'profile/profile.html'
+                    }
+                }
+            }).state('default.profile.timeline', {
+                url: '/timeline',
+                views: {
+                    '': {
+                        templateUrl: appViewPath + 'profile/timeline.html'
                     },
-                    'info@default.profile': {
-                        templateUrl: appViewPath + '/profile/profile-info.html',
+                    'info@default.profile.timeline': {
+                        templateUrl: appViewPath + 'profile/profile-info.html',
                         controller: ProfileInfoCtrl,
                         resolve: {
                             user: function () {
@@ -50,15 +57,18 @@
                             }
                         }
                     },
-                    'userposts@default.profile': {
+                    'userposts@default.profile.timeline': {
                         templateUrl: appViewPath + 'profile/profile-posts.html',
                         controller: ProfilePostsCtrl
                     },
-                    'friends@default.profile': {
+                    'friends@default.profile.timeline': {
                         templateUrl: appViewPath + 'profile/profile-friends.html',
                         controller: ProfileFriendsCtrl
                     }
                 }
+            }).state('default.profile.photos', {
+                url: '/photos',
+                views: {}
             }).state('launchpad', {
                 url: '/launchpad',
                 allowAnonymous: true,
