@@ -4,3 +4,4 @@
     HomeTickerCtrl.$inject = ['$scope'];
     return HomeTickerCtrl;
 })();
+//# sourceMappingURL=HomeTickerCtrl.js.map

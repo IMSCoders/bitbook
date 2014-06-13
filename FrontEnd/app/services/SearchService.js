@@ -8,3 +8,4 @@
 })();
 
 App.app.service("SearchService", SearchService);
+//# sourceMappingURL=SearchService.js.map

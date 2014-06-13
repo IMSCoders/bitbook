@@ -4,11 +4,7 @@ var PostsService = (function () {
         this.$http = $http;
     }
     PostsService.prototype.getPosts = function () {
-        this.$http.get(App.webApiUrl + 'Post/GetAllPosts').success(function () {
-            alert('success');
-        }).error(function (data, status, headers, config) {
-            alert('failure');
-        });
+        return this.$http.get(App.webApiUrl + 'Post/GetAllPosts');
     };
 
     PostsService.prototype.createPost = function (post) {

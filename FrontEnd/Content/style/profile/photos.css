@@ -1,0 +1,13 @@
+﻿body #profile-photos-container {
+  width: auto;
+}
+body #profile-photos-container .single-photo {
+  height: 350px;
+  background-color: black;
+  border: thick solid red;
+  padding: 10px;
+}
+body #profile-photos-container .single-photo img {
+  height: auto;
+}
+/*# sourceMappingURL=photos.css.map */

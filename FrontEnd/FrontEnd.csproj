@@ -29,9 +29,9 @@
     <Content Include="app\views\launchpad\launchpad.html" />
     <Content Include="app\views\launchpad\login.html" />
     <Content Include="app\views\launchpad\signup.html" />
-    <Content Include="app\views\profile\profile-friends.html" />
-    <Content Include="app\views\profile\profile-info.html" />
-    <Content Include="app\views\profile\profile-posts.html" />
+    <Content Include="app\views\profile\timeline\profile-friends.html" />
+    <Content Include="app\views\profile\timeline\profile-info.html" />
+    <Content Include="app\views\profile\timeline\profile-posts.html" />
     <Content Include="app\views\profile\profile.html" />
     <Content Include="app\views\profile\timeline.html" />
     <Content Include="app\views\user\status-form.html" />
@@ -411,7 +411,9 @@
       <DependentUpon>web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="app\views\profile\friends\" />
+  </ItemGroup>
   <ItemGroup>
     <Reference Include="Microsoft.AspNet.SignalR.Core">
       <HintPath>..\packages\Microsoft.AspNet.SignalR.Core.2.0.3\lib\net45\Microsoft.AspNet.SignalR.Core.dll</HintPath>

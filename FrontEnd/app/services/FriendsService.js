@@ -16,3 +16,4 @@
 })();
 
 App.app.service("FriendsService", FriendsService);
+//# sourceMappingURL=FriendsService.js.map

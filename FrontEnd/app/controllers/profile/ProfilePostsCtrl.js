@@ -6,3 +6,4 @@
 })();
 
 App.app.controller("ProfilePostsCtrl", ProfilePostsCtrl);
+//# sourceMappingURL=ProfilePostsCtrl.js.map

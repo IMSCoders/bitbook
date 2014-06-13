@@ -1,8 +1,7 @@
-﻿var ProfileFriendsCtrl = (function () {
-    function ProfileFriendsCtrl($scope, friendsService) {
+﻿var PhotosOfYouCtrl = (function () {
+    function PhotosOfYouCtrl($scope) {
         this.$scope = $scope;
-        this.friendsService = friendsService;
-        this.status = { isopen: false };
+        this.text = 'this is text';
         this.photos = [
             "http://tmacfitness.com/wp-content/uploads/2013/04/Beauty-of-nature-random-4884759-1280-800-1024x640.jpg",
             "http://www.wheretocampin.com/wp-content/uploads/2013/06/wallpaper_nature_103-1920x1200.jpeg",
@@ -22,20 +21,9 @@
         ];
         $scope.model = this;
     }
-    ProfileFriendsCtrl.prototype.getAllFriends = function () {
-        //this.friendsList = this.friendsService.getAllFriends("1");
-    };
-
-    ProfileFriendsCtrl.prototype.toggled = function (open) {
-        console.log('Dropdown is now: ', open);
-    };
-
-    ProfileFriendsCtrl.prototype.toggleDropdown = function ($event) {
-        $event.preventDefault();
-        $event.stopPropagation();
-        this.$scope.status.isopen = !this.$scope.status.isopen;
-    };
-    ProfileFriendsCtrl.$inject = ['$scope', 'FriendsService'];
-    return ProfileFriendsCtrl;
+    PhotosOfYouCtrl.$inject = ['$scope'];
+    return PhotosOfYouCtrl;
 })();
-//# sourceMappingURL=ProfileFriendsCtrl.js.map
+
+App.app.controller("PhotosOfYouCtrl", PhotosOfYouCtrl);
+//# sourceMappingURL=PhotosOfYouCtrl.js.map

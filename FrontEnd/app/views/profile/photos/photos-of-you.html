@@ -1,0 +1,9 @@
+﻿<div>
+    photo container div
+    {{model.text}}
+    <div class="row">
+        <div ng-repeat="photo in model.photos track by $index" class="single-photo col-lg-3 col-md-3 col-sm-4 col-xs-6">
+            <img ng-src="{{photo}}" alt="" class="img-thumbnail" />
+        </div>
+    </div>
+</div>

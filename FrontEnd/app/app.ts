@@ -43,10 +43,10 @@
                     url:'/timeline',
                     views: {
                         '': {
-                            templateUrl: appViewPath + 'profile/timeline.html'
+                            templateUrl: appViewPath + 'profile/timeline/timeline.html'
                         },
                         'info@default.profile.timeline': {
-                            templateUrl: appViewPath + 'profile/profile-info.html',
+                            templateUrl: appViewPath + 'profile/timeline/profile-info.html',
                             controller: ProfileInfoCtrl,
                             resolve: {
                                 user: () => {
@@ -61,20 +61,26 @@
                             }
                         },
                         'userposts@default.profile.timeline': {
-                            templateUrl: appViewPath + 'profile/profile-posts.html',
+                            templateUrl: appViewPath + 'profile/timeline/profile-posts.html',
                             controller: ProfilePostsCtrl
                         },
                         'friends@default.profile.timeline': {
-                            templateUrl: appViewPath + 'profile/profile-friends.html',
+                            templateUrl: appViewPath + 'profile/timeline/profile-friends.html',
                             controller: ProfileFriendsCtrl
                         }
                     } 
                 })
-
+                
                 .state('default.profile.photos', {
                     url: '/photos',
                     views: {
-                        
+                        "": {
+                            templateUrl: appViewPath + 'profile/photos/profile-photos.html'
+                        },
+                        "photosOfYou@default.profile.photos": {
+                            templateUrl: appViewPath + 'profile/photos/photos-of-you.html',
+                            controller:PhotosOfYouCtrl
+                        }
                     }
                 })
                 .state('launchpad', {

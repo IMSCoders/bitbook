@@ -12,7 +12,13 @@
         //this.joinGroupFactory.initialize();
     }
     NewsFeedCtrl.prototype.getPosts = function () {
-        this.postsService.getPosts();
+        var _this = this;
+        var received = this.postsService.getPosts();
+        received.success(function (data) {
+            _this.posts = data;
+        }).error(function (data, status, headers, config) {
+            alert('failure');
+        });
         //        ajax.done(() => {
         //            alert('posts received');
         //        }).error(() => {
